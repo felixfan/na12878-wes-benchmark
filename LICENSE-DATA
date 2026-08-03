@@ -1,0 +1,26 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Yanhui Fan, Ming Huang, Chunming Zhang, Gang Niu
+
+The data and documentation in this repository -- results/, schema/, reference/,
+source_data/source_data.xlsx and EXPERIMENT-DESIGN.md -- are licensed under the
+Creative Commons Attribution 4.0 International License.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+ATTRIBUTION
+Please cite the Data Descriptor:
+  Fan, Y., Huang, M., Zhang, C. & Niu, G. Deep whole-exome sequencing of
+  NA12878 (HG001) on three platforms for germline variant-calling
+  benchmarking. Scientific Data (2026).
+
+THIRD-PARTY MATERIAL
+reference/S07604514_Covered.GRCh38.bed and reference/S07604514_Covered.GRCh37.bed
+describe the Agilent SureSelect Human All Exon V6 capture design (Agilent
+Technologies) and are redistributed solely so that the benchmark region is
+reproducible. The GIAB HG001 v4.2.1 benchmark used as ground truth is
+distributed by NIST/NCBI and is not included in this repository.

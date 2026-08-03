@@ -1,0 +1,1 @@
+sample,platform,reference,raw_read_pairs,raw_bases_gb,q30_pct,gc_pct,mean_read_len,mapped_pct,properly_paired_pct,dup_pct,on_target_pct,mean_target_cov,fold_enrichment,fold80_penalty,pct_target_10x,pct_target_20x,pct_target_30x,zero_cvg_target_pct,fastp_version,hsmetrics_tool,run_date

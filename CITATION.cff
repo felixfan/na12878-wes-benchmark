@@ -1,0 +1,81 @@
+cff-version: 1.2.0
+title: >-
+  Deep whole-exome sequencing of NA12878 (HG001) on three platforms
+  for germline variant-calling benchmarking - analysis framework and
+  processed results
+message: >-
+  If you use this software or the processed results, please cite the
+  Data Descriptor (preferred-citation) and, where a versioned pointer
+  is needed, this archived release.
+type: dataset
+authors:
+  - family-names: Fan
+    given-names: Yanhui
+    affiliation: >-
+      Phil Rivers Technology; West Institute of Computing Technology,
+      Chinese Academy of Sciences
+    email: felixfanyh@connect.hku.hk
+    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # AUTHOR TO FILL
+  - family-names: Huang
+    given-names: Ming
+    affiliation: Phil Rivers Technology
+  - family-names: Zhang
+    given-names: Chunming
+    affiliation: >-
+      Institute of Computing Technology, Chinese Academy of Sciences
+  - family-names: Niu
+    given-names: Gang
+    affiliation: >-
+      Phil Rivers Technology; West Institute of Computing Technology,
+      Chinese Academy of Sciences; Turing-Darwin Laboratory
+    email: g.niu@philrivers.com
+abstract: >-
+  Analysis framework and processed benchmarking outputs for deep
+  whole-exome sequencing of the Genome in a Bottle reference sample
+  NA12878 (HG001), generated from a single aliquoted genomic DNA stock
+  and sequenced in parallel on Illumina NovaSeq 6000, BGI DNBSEQ-T7 and
+  GeneMind SURFSeq 5000. Contains the deterministic pipeline that
+  produced 450 benchmarking runs spanning an 18-point on-target depth
+  titration, two callers (GATK4 HaplotypeCaller and DeepVariant) on CPU
+  and GPU (NVIDIA Parabricks), and two reference builds (GRCh38 and
+  GRCh37/b37), each evaluated against the GIAB HG001 v4.2.1 benchmark
+  with hap.py; together with the aggregated results table, per-run
+  coverage and timing tables, CPU-versus-GPU site-level concordance and
+  quality tables, sample identity and contamination QC, the capture
+  target BED in both builds, and per-figure source data and plotting
+  code.
+keywords:
+  - NA12878
+  - HG001
+  - Genome in a Bottle
+  - whole-exome sequencing
+  - germline variant calling
+  - benchmarking
+  - depth titration
+  - GATK
+  - DeepVariant
+  - NVIDIA Parabricks
+  - GPU acceleration
+  - reference genome build
+license: CC-BY-4.0
+license-url: 'https://creativecommons.org/licenses/by/4.0/'
+repository-code: '[PENDING: GitHub URL]'
+version: 1.0.0
+date-released: '2026-08-03'
+preferred-citation:
+  type: article
+  title: >-
+    Deep whole-exome sequencing of NA12878 (HG001) on three platforms
+    for germline variant-calling benchmarking
+  authors:
+    - family-names: Fan
+      given-names: Yanhui
+    - family-names: Huang
+      given-names: Ming
+    - family-names: Zhang
+      given-names: Chunming
+    - family-names: Niu
+      given-names: Gang
+  journal: Scientific Data
+  year: 2026
+  # doi: '10.1038/s41597-XXX-XXXXX-X'   # fill on acceptance

@@ -1,0 +1,1 @@
+run_id,sample,platform,reference,aligner,caller,hardware,target_depth_x,mean_target_depth_x,seed,benchmark_tool,filter,variant_type,genotype_class,region_stratum,truth_total,tp,fn,query_total,fp,unk,fp_gt,precision,recall,f1,frac_na,aligner_version,tool_version,parabricks_version,benchmark_tool_version,giab_version,target_bed,run_date

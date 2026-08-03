@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# local, filled-in copy of the config (keep the template tracked, not your paths)
+configs/na12878.paths.sh
+
+# large third-party sources that must not be committed
+*.zip
+*.tar.gz
+*.bam
+*.bai
+*.vcf.gz
+*.vcf.gz.tbi
+*.fq.gz
+*.fastq.gz

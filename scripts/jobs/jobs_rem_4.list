@@ -1,0 +1,7 @@
+ZY_Illumina_NA12878.grch38.bwa-mem.deepvariant.cpu.400x.s42
+ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.400x.s42
+ZY_GeneMind_NA12878.grch38.bwa-mem.deepvariant.cpu.300x.s42
+ZY_GeneMind_NA12878.grch38.bwa-mem.gatk4_hc.cpu.300x.s42
+ZY_BGI_NA12878.grch38.bwa-mem.gatk4_hc.cpu.300x.s42
+ZY_Illumina_NA12878.grch38.bwa-mem.deepvariant.cpu.200x.s44
+ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.200x.s44

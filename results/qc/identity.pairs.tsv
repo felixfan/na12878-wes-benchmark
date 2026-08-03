@@ -1,0 +1,4 @@
+#sample_a	sample_b	relatedness	ibs0	ibs2	hom_concordance	hets_a	hets_b	hets_ab	shared_hets	hom_alts_a	hom_alts_b	shared_hom_alts	n	x_ibs0	x_ibs2	expected_relatedness
+ZY_BGI_NA12878	ZY_GeneMind_NA12878	1.000	0	16703	0.991	6871	6874	13727	6863	5617	5414	5366	16704	0	344	-1.0
+ZY_BGI_NA12878	ZY_Illumina_NA12878	1.000	0	17118	0.994	6871	6850	13696	6848	5617	5626	5583	17118	0	349	-1.0
+ZY_GeneMind_NA12878	ZY_Illumina_NA12878	1.000	0	16710	0.993	6874	6850	13695	6847	5414	5626	5376	16711	0	343	-1.0

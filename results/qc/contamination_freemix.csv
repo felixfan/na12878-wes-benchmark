@@ -1,0 +1,4 @@
+sample,platform,freemix,n_snp,tool,tool_source,run_date
+ZY_Illumina_NA12878,illumina_novaseq6000,0.000465883,100000,verifybamid2,verifybamid2-2.0.1(bioconda),2026-07-29
+ZY_BGI_NA12878,bgi_dnbseq_t7,0.00133902,100000,verifybamid2,verifybamid2-2.0.1(bioconda),2026-07-29
+ZY_GeneMind_NA12878,genemind_surfseq5000,0.0047236,100000,verifybamid2,verifybamid2-2.0.1(bioconda),2026-07-29

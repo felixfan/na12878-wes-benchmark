@@ -1,0 +1,7 @@
+run_id,sample,platform,target_depth_x,snp_f1_raw,snp_f1_snvhf,delta_f1,snp_prec_raw,snp_prec_snvhf,snp_recall_raw,snp_recall_snvhf,run_date
+ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.30x.s42,ZY_Illumina_NA12878,illumina_novaseq6000,30,0.967266,0.954428,-0.0128,0.980938,0.987758,0.953969,0.923275,2026-07-29
+ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.full.s0,ZY_Illumina_NA12878,illumina_novaseq6000,full,0.982265,0.974245,-0.0080,0.979065,0.996157,0.985486,0.953277,2026-07-29
+ZY_BGI_NA12878.grch38.bwa-mem.gatk4_hc.cpu.30x.s42,ZY_BGI_NA12878,bgi_dnbseq_t7,30,0.967721,0.956434,-0.0113,0.980891,0.987289,0.954899,0.92745,2026-07-29
+ZY_BGI_NA12878.grch38.bwa-mem.gatk4_hc.cpu.full.s0,ZY_BGI_NA12878,bgi_dnbseq_t7,full,0.982946,0.976043,-0.0069,0.97965,0.996238,0.986264,0.956652,2026-07-29
+ZY_GeneMind_NA12878.grch38.bwa-mem.gatk4_hc.cpu.30x.s42,ZY_GeneMind_NA12878,genemind_surfseq5000,30,0.97707,0.970516,-0.0066,0.979373,0.987091,0.974778,0.954488,2026-07-29
+ZY_GeneMind_NA12878.grch38.bwa-mem.gatk4_hc.cpu.full.s0,ZY_GeneMind_NA12878,genemind_surfseq5000,full,0.982237,0.977689,-0.0045,0.977627,0.995294,0.986892,0.960697,2026-07-29

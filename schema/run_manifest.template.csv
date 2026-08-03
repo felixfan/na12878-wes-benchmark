@@ -1,0 +1,1 @@
+run_id,sample,platform,reference,aligner,aligner_version,caller,tool_version,hardware,parabricks_version,target_depth_x,mean_target_depth_x,seed,benchmark_tool,benchmark_tool_version,giab_version,target_bed,happy_prefix,run_date

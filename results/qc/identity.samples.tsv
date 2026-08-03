@@ -1,0 +1,4 @@
+#family_id	sample_id	paternal_id	maternal_id	sex	phenotype	original_pedigree_sex	gt_depth_mean	gt_depth_sd	depth_mean	depth_sd	ab_mean	ab_std	n_hom_ref	n_het	n_hom_alt	n_unknown	p_middling_ab	X_depth_mean	X_n	X_hom_ref	X_het	X_hom_alt	Y_depth_mean	Y_n
+ZY_BGI_NA12878	ZY_BGI_NA12878	-9	-9	-9	-9	-9	700.1	445.4	697.6	446.6	0.53	0.39	4716	6871	5617	180	0.001	780.54	353	113	130	110	0.00	0
+ZY_GeneMind_NA12878	ZY_GeneMind_NA12878	-9	-9	-9	-9	-9	615.5	307.1	613.5	308.5	0.53	0.39	4523	6874	5414	573	0.003	724.37	349	111	131	107	0.00	0
+ZY_Illumina_NA12878	ZY_Illumina_NA12878	-9	-9	-9	-9	-9	592.7	409.6	590.2	410.4	0.53	0.39	4732	6850	5626	176	0.001	638.93	353	113	128	112	0.00	0
