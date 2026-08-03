@@ -59,7 +59,7 @@ keywords:
   - reference genome build
 license: CC-BY-4.0
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
-repository-code: '[PENDING: GitHub URL]'
+repository-code: 'https://github.com/felixfan/na12878-wes-benchmark'
 version: 1.0.0
 date-released: '2026-08-03'
 preferred-citation:

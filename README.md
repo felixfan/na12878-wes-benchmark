@@ -154,6 +154,8 @@ benchmark region; the capture design itself is Agilent's.
 See [`CITATION.cff`](CITATION.cff). Please cite the Data Descriptor, and the archived release
 (Zenodo DOI **[PENDING-ACCESSION]**) if you reuse the code or processed tables.
 
+Repository: https://github.com/felixfan/na12878-wes-benchmark
+
 ## Third-party data
 
 The GIAB HG001 v4.2.1 benchmark used as ground truth is from the Genome in a Bottle Consortium
