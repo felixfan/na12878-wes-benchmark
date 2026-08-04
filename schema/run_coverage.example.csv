@@ -1,5 +1,0 @@
-run_id,sample,platform,reference,target_depth_x,seed,mean_target_depth_x,median_target_depth_x,used_gb,pct_target_10x,pct_target_20x,pct_target_30x,pct_target_50x,coverage_tool,coverage_tool_version,run_date
-ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.30x.s1,ZY_Illumina_NA12878,illumina_novaseq6000,grch38,30,1,29.7,29.0,2.65,0.9820,0.9310,0.5900,0.1200,mosdepth,0.3.6,2026-07-05
-ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.10x.s1,ZY_Illumina_NA12878,illumina_novaseq6000,grch38,10,1,10.1,10.0,0.90,0.5100,0.0300,0.0010,0.0000,mosdepth,0.3.6,2026-07-05
-ZY_BGI_NA12878.grch38.bwa-mem.gatk4_hc.cpu.30x.s1,ZY_BGI_NA12878,bgi_dnbseq_t7,grch38,30,1,30.2,30.0,2.55,0.9850,0.9380,0.6010,0.1300,mosdepth,0.3.6,2026-07-05
-ZY_Illumina_NA12878.grch38.bwa-mem.gatk4_hc.cpu.full.s0,ZY_Illumina_NA12878,illumina_novaseq6000,grch38,full,0,1012.4,1008.0,92.30,0.9990,0.9980,0.9970,0.9940,mosdepth,0.3.6,2026-07-05

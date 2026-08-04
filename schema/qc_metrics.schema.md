@@ -46,4 +46,4 @@ full-depth bam ── samtools flagstat ─▶ flagstat.txt        ├─▶ agg
 > once per build (`run_qc.sh` creates and caches it). Both bait and target use the V6 Covered design.
 >
 > `on_target_pct` and `dup_pct` are also written back into
-> [`run_coverage`](run_coverage.example.csv), where they are otherwise `NA`.
+> [`run_coverage`](../results/run_coverage_all.csv), where they are otherwise `NA`.

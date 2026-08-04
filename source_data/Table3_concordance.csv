@@ -1,0 +1,5 @@
+caller,type,shared,GT_concordant,GT_discordant,CPU_only,GPU_only,GT_concordance_pct,GT_discordant_pct,CPU_only_pct,GPU_only_pct
+deepvariant,INDEL,282166,281841,325,1491,2191,99.885,0.115,0.528,0.776
+deepvariant,SNV,3284551,3283318,1233,4201,4533,99.962,0.038,0.128,0.138
+gatk4_hc,INDEL,355511,355178,333,1647,2750,99.906,0.094,0.463,0.774
+gatk4_hc,SNV,3353511,3353128,383,4694,4865,99.989,0.011,0.14,0.145

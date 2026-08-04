@@ -5,7 +5,7 @@
 > CPU↔GPU concordance), together with the companion table `run_coverage`.
 >
 > The authoritative column order is [`benchmark_long.header.csv`](benchmark_long.header.csv);
-> a synthetic example is in [`benchmark_long.example.csv`](benchmark_long.example.csv).
+> the released table itself is [`results/benchmark_long_all.csv`](../results/benchmark_long_all.csv).
 > If a column changes, change those two files and this document together.
 
 ---
@@ -138,7 +138,7 @@ row); *(blank)* = hap.py does not provide that metric for that stratum.
 Mean on-target depth, the ≥10×/≥20× covered fractions and similar quantities are **one value per run**;
 storing them in the long table would repeat them on every stratum row, so they live in their own table,
 joined on `run_id` (or on the BAM key `sample.reference.aligner.target_depth_x.seed`). See
-[`run_coverage.example.csv`](run_coverage.example.csv).
+[`results/run_coverage_all.csv`](../results/run_coverage_all.csv).
 
 Columns actually produced by `run_one.sh` via mosdepth over the V6 BED: `target_depth_x` (the grid point),
 `mean_target_depth_x` (measured), `used_gb` (bases actually used by that run), and
@@ -206,3 +206,11 @@ For the site-level comparison (which variants each pipeline called, independent 
 4. `tp + fn == truth_total`.
 5. Enum columns contain only allowed values.
 6. `hardware=gpu` implies `parabricks_version ≠ NA`.
+
+---
+
+## Note on `region_stratum` in this release
+
+The pipeline supports GA4GH difficult-region stratification (`run_happy.sh --stratification`), but
+GA4GH stratification was not enabled for this dataset. Every row of the released table therefore
+carries `region_stratum = all`; no difficult-region rows exist.

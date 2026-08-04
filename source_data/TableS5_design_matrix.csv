@@ -1,0 +1,6 @@
+block,runs,description
+T1 depth titration,312,"GRCh38, CPU, 3 platforms x 2 callers x 17 sub-full depths x 3 seeds + full depth"
+T3 CPU-GPU pairing,132,"GRCh38, GPU (Parabricks), 3 platforms x 2 caller pairs x 7 depths x 3 seeds + full depth"
+T4 reference build,6,"GRCh37/b37, full depth, 3 platforms x 2 callers"
+Total analysed,450,36% of the 1248-cell full factorial (3 platforms x 52 depth-and-seed combinations x 4 caller/hardware configurations x 2 reference builds)
+Excluded acceptance replicates,4,"Illumina 30x seed s1, CPU and GPU, both callers; recorded in the archive, excluded from analysis"

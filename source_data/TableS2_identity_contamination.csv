@@ -1,0 +1,7 @@
+metric,unit,value,detail
+somalier pairwise identity,ZY_BGI_NA12878 vs ZY_GeneMind_NA12878,1.0,IBS0=0; hom_concordance=0.991; informative_sites=16704
+somalier pairwise identity,ZY_BGI_NA12878 vs ZY_Illumina_NA12878,1.0,IBS0=0; hom_concordance=0.994; informative_sites=17118
+somalier pairwise identity,ZY_GeneMind_NA12878 vs ZY_Illumina_NA12878,1.0,IBS0=0; hom_concordance=0.993; informative_sites=16711
+VerifyBamID2 contamination (FREEMIX),ZY_Illumina_NA12878,0.047,percent; n_snp=100000; verifybamid2-2.0.1(bioconda)
+VerifyBamID2 contamination (FREEMIX),ZY_BGI_NA12878,0.134,percent; n_snp=100000; verifybamid2-2.0.1(bioconda)
+VerifyBamID2 contamination (FREEMIX),ZY_GeneMind_NA12878,0.472,percent; n_snp=100000; verifybamid2-2.0.1(bioconda)

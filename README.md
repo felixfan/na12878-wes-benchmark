@@ -3,9 +3,11 @@
 Analysis code and processed benchmarking outputs accompanying the *Scientific Data* Data Descriptor
 **"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking."**
 
-The raw sequencing reads are in the NCBI Sequence Read Archive under BioProject **[PENDING-ACCESSION: PRJNA]**.
+The raw sequencing reads are deposited in the NCBI Sequence Read Archive under BioProject
+**PRJNA1506792** (BioSample SAMN62149305; held until publication, Run accessions pending).
 This repository holds everything downstream of them: the pipeline that produced the 450 benchmarking runs,
-and every table and figure reported in the paper.
+and every table and figure reported in the paper. Nothing here is under embargo — the processed results,
+QC tables and code are openly available now.
 
 ---
 
@@ -13,27 +15,31 @@ and every table and figure reported in the paper.
 
 | Path | Contents |
 |---|---|
-| `scripts/` | The complete analysis framework (shell + Python). Every run is fully determined by its `run_id`. |
-| `scripts/jobs/` | The enumerated run lists actually executed (`jobs_*.list`). |
-| `configs/` | `na12878.paths.template.sh` — data/resource locations. Copy, fill in the `/PATH/TO/...` placeholders, use. |
-| `schema/` | Authoritative data dictionary for the results table (column-by-column definitions, validation rules). |
-| `results/` | Processed benchmarking outputs (see below). |
-| `results/qc/` | Sample identity (somalier), contamination (VerifyBamID2) and the SNV hard-filter test. |
-| `results/figures/` | Figures as published (PNG, 300 dpi). |
+| `scripts/` | The analysis framework that produced the runs (shell + Python). Every run is fully determined by its `run_id`. |
+| `scripts/jobs/` | The run lists actually executed (`jobs_*.list`). |
+| `configs/` | `na12878.paths.template.sh` - data/resource locations. Copy, fill in the `/PATH/TO/...` placeholders, use. |
+| `schema/` | Authoritative data dictionary for the processed result tables. |
+| `results/` | Processed pipeline output: the full accuracy, coverage, timing, concordance and QC tables (see below). |
+| `results/plan/` | `run_manifest.csv` - the registration record of every run that was executed, and the join key between the pipeline and the results. |
+| `source_data/` | **One file per published figure and per published table** - the exact values behind Figures 2-7 and Tables 1-4, S1-S5. |
+| `figure_code/` | **One script per published figure**, reading only the matching `source_data/` file. |
+| `figures/` | The published figures, Figure 1-7, PNG at 300 dpi, as produced by `figure_code/`. |
 | `reference/` | Agilent SureSelect V6 Covered target BED, in GRCh38 and GRCh37/b37 coordinates. |
-| `source_data/` | `source_data.xlsx` (per-figure/table source values) and `figure_code/` (Python + R, one script per figure). |
 | `EXPERIMENT-DESIGN.md` | The experimental design: depth grid, blocks, and why the matrix is nested rather than full-factorial. |
 
 ### Key result files
 
 | File | Rows | What it is |
 |---|---|---|
-| `results/benchmark_long_all.csv` | 5,448 | **The main table.** One row per run × filter × variant type × genotype class. 454 runs (450 analysed + 4 acceptance replicates with seed `s1`, excluded from all analyses). |
-| `results/run_coverage_all.csv` | — | Per-run measured on-target depth and ≥10/20/30/50× fractions (mosdepth). |
-| `results/resource_usage_all.csv` | — | Per-run wall-clock time; the basis of the CPU-versus-GPU speed-up figures. |
-| `results/pair_concordance.tsv` | 402 | Site-by-site CPU↔GPU comparison, 134 pairs × {SNV, INDEL, ALL}. |
-| `results/pair_quality.tsv` | 536 | DP/GQ/QUAL by concordance category, 134 pairs × 4 categories. |
-| `results/supplementary_cpu_gpu_quality.csv` | 134 | Supplementary Table S1 (per-pair quality, wide format). |
+| `results/benchmark_long_all.csv` | 5,448 | **The main table.** One row per run x filter x variant type x genotype class. 454 runs (450 analysed + 4 acceptance replicates with seed `s1`, excluded from all analyses). |
+| `results/run_coverage_all.csv` | 454 | Per-run measured on-target depth and >=10/20/30/50x fractions (mosdepth). |
+| `results/resource_usage_all.csv` | 454 | Per-run wall-clock time, one row per `run_id`. Seven runs were executed more than once; their timings are collapsed to the median. |
+| `results/pair_concordance.tsv` | 402 | Site-by-site CPU-GPU comparison, 134 pairs x {SNV, INDEL, ALL}. |
+| `results/pair_quality.tsv` | 536 | DP/GQ/QUAL by concordance category, 134 pairs x 4 categories. |
+| `results/qc/qc_metrics.csv` | 3 | Per-library sequencing QC (fastp, samtools flagstat, Picard MarkDuplicates and CollectHsMetrics). |
+| `results/qc/*` | - | Sample identity (somalier), contamination (VerifyBamID2) and the SNV hard-filter test. |
+| `results/plan/run_manifest.csv` | 454 | **The execution record.** One row per `run_id`: platform, reference, aligner, caller, hardware, target and measured depth, seed, pinned tool versions, GIAB version, target BED. `aggregate_happy.py` joins it to the hap.py output to build the main table, so it is the reproducibility anchor of the whole chain. Runs executed more than once are recorded once (last registration). |
+| `results/sra_file_manifest.tsv` | 6 | Raw FASTQ sizes (exact bytes) and MD5 checksums. |
 
 Analyses in the paper exclude the four `s1` acceptance-replicate runs, giving **450 runs** and **132 CPU↔GPU pairs**.
 
@@ -95,9 +101,14 @@ then appends to the manifest, coverage and resource tables.
 **5. Aggregate and plot:**
 
 ```bash
-python scripts/aggregate_happy.py --manifest <workdir>/plan/run_manifest.csv --out benchmark_long_all.csv
-python scripts/plot_benchmark.py --long benchmark_long_all.csv --outdir figures --resource resource_usage_all.csv
+python scripts/aggregate_happy.py --manifest results/plan/run_manifest.csv \
+       --happydir <workdir>/happy --out results/benchmark_long_all.csv
+python scripts/make_source_data.py            # results/ -> source_data/
+Rscript figure_code/Fig2_saturation.R         # source_data/ -> figures/  (one script per figure)
 ```
+
+The `happy_prefix` column of the shipped manifest is relative (`happy/<run_id>`); point
+`--happydir` at wherever your hap.py output lives.
 
 ### Pinned tool versions
 
@@ -110,17 +121,49 @@ relies on Parabricks embedding the same GATK 4.3.0.0 and DeepVariant 1.9.0 engin
 
 ---
 
-## Regenerating the figures
+## Source data and figures
 
-Each published figure has a standalone script in `source_data/figure_code/`, reading `source_data.xlsx`
-and writing 300 dpi output. Python and R versions produce the same figure:
+Every published figure and table has its **own** data file under `source_data/`, and every figure has its
+**own** script under `figure_code/`. Nothing is bundled: to check one number in one panel you open one CSV.
+
+| Published item | Data file | Code |
+|---|---|---|
+| Figure 1 - study design | *(schematic, no data)* | `figure_code/Fig1_design.py` |
+| Figure 2 - depth saturation | `source_data/Fig2_saturation.csv` | `figure_code/Fig2_saturation.R` |
+| Figure 3 - platform comparison at 30x | `source_data/Fig3_platform.csv` | `figure_code/Fig3_platform.R` |
+| Figure 4 - INDEL hard-filtering | `source_data/Fig4_hardfilter.csv` | `figure_code/Fig4_hardfilter.R` |
+| Figure 5 - CPU-GPU concordance | `source_data/Fig5_concordance.csv` | `figure_code/Fig5_concordance.R` |
+| Figure 6 - CPU-GPU acceleration | `source_data/Fig6_speedup.csv` | `figure_code/Fig6_speedup.R` |
+| Figure 7 - reference build | `source_data/Fig7_reference.csv` | `figure_code/Fig7_reference.R` |
+| Table 1 - sequencing QC | `source_data/Table1_QC.csv` | - |
+| Table 2 - raw files, sizes, MD5 | `source_data/Table2_files.csv` | - |
+| Table 3 - site-level concordance | `source_data/Table3_concordance.csv` | - |
+| Table 4 - quality of concordant and discordant sites | `source_data/Table4_quality.csv` | - |
+| Table S1 - per-pair quality (132 pairs) | `source_data/TableS1_pair_quality.csv` | - |
+| Table S2 - identity and contamination | `source_data/TableS2_identity_contamination.csv` | - |
+| Table S3 - SNV hard-filter test | `source_data/TableS3_snv_hardfilter.csv` | - |
+| Table S4 - nominal versus measured depth | `source_data/TableS4_depth_mapping.csv` | - |
+| Table S5 - design matrix | `source_data/TableS5_design_matrix.csv` | - |
+
+**Redraw a figure** (writes a 300 dpi PNG into `figures/`):
 
 ```bash
-cd source_data/figure_code
-python Fig2_saturation.py        # or: Rscript Fig2_saturation.R
+Rscript figure_code/Fig2_saturation.R
 ```
 
-Python needs `pandas matplotlib openpyxl`; R needs `readxl ggplot2 dplyr` (plus `tidyr` for Fig 3/4).
+The figure scripts are **R** (`ggplot2`; Fig 3/4 also need `tidyr`, Fig 6 also `dplyr` and `patchwork`).
+Figure 1 is a hand-laid-out schematic with no underlying data, so it is the one exception and is drawn in
+Python (`matplotlib`). Each script locates the repository relative to its own file, so it runs from any
+working directory.
+
+**Rebuild every source-data file from the processed results** (needs `pandas`):
+
+```bash
+python scripts/make_source_data.py
+```
+
+That regenerates all 15 files in `source_data/` from `results/`, so the chain
+`results/ -> source_data/ -> figures/` is reproducible end to end.
 
 ---
 
@@ -132,7 +175,9 @@ Python needs `pandas matplotlib openpyxl`; R needs `readxl ggplot2 dplyr` (plus 
   `run_coverage_all.csv`; the mapping is tabulated in Supplementary Table S4 of the paper.
 - **`PASS` means different things per caller family.** For the GATK family it is *raw SNVs plus
   hard-filtered INDELs* (SNV hard-filtering was measured to be net-negative and is deliberately not applied);
-  DeepVariant uses its own internal model. The unfiltered set is under `filter=ALL`.
+  DeepVariant uses its own internal model. For the GATK family the unfiltered set is under `filter=ALL`;
+  for DeepVariant the `ALL` and `PASS` rows are identical, because the released call sets contain only
+  records DeepVariant itself passed.
 - **Benchmark scope.** All accuracy numbers are defined on the V6 Covered target ∩ GIAB HG001 v4.2.1
   high-confidence regions. Behaviour outside that intersection is not characterised.
 - **Not covered by this dataset:** structural variants, copy-number variants, somatic calling, non-exonic
@@ -142,8 +187,8 @@ Python needs `pandas matplotlib openpyxl`; R needs `readxl ggplot2 dplyr` (plus 
 
 ## Licence
 
-- **Code** (`scripts/`, `configs/`, `source_data/figure_code/`): MIT — see [`LICENSE`](LICENSE).
-- **Data and documentation** (`results/`, `schema/`, `reference/`, `source_data/source_data.xlsx`,
+- **Code** (`scripts/`, `configs/`, `figure_code/`): MIT — see [`LICENSE`](LICENSE).
+- **Data and documentation** (`results/`, `source_data/`, `figures/`, `schema/`, `reference/`,
   `EXPERIMENT-DESIGN.md`): CC BY 4.0 — see [`LICENSE-DATA`](LICENSE-DATA).
 
 The Agilent SureSelect V6 target BED under `reference/` is redistributed for reproducibility of the
@@ -152,9 +197,8 @@ benchmark region; the capture design itself is Agilent's.
 ## Citing
 
 See [`CITATION.cff`](CITATION.cff). Please cite the Data Descriptor, and the archived release
-(Zenodo DOI **[PENDING-ACCESSION]**) if you reuse the code or processed tables.
-
-Repository: https://github.com/felixfan/na12878-wes-benchmark
+(Zenodo DOI **[PENDING-ACCESSION]**) if you reuse the code or processed tables. The development
+repository is at <https://github.com/felixfan/na12878-wes-benchmark>.
 
 ## Third-party data
 

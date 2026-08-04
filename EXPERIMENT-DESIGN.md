@@ -121,7 +121,7 @@ raw fastq (R1, R2)
              gatk4 HaplotypeCaller / DeepVariant (WES model) / pbrun haplotypecaller / pbrun deepvariant
            └─ bcftools norm -m-any -f <reference>                    # left-align + split multi-allelics
               └─ hap.py against GIAB ∩ V6 (vcfeval engine, GA4GH stratification)
-                 └─ aggregate_happy.py -> benchmark_long_all.csv -> plot_benchmark.py
+                 └─ aggregate_happy.py -> benchmark_long_all.csv -> make_source_data.py -> figure_code/*.R
 ```
 
 Pinned tool versions are listed in [`README.md`](README.md) (Parabricks 4.7.0 / GATK 4.3.0.0 /

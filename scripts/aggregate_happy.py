@@ -11,7 +11,7 @@ Data flow:
 
 Usage:
     python aggregate_happy.py \
-        --manifest schema/run_manifest.example.csv \
+        --manifest schema/run_manifest.template.csv \
         --header   schema/benchmark_long.header.csv \
         --out      benchmark_long.csv
 
