@@ -23,7 +23,7 @@ QC tables and code are openly available now.
 | `results/plan/` | `run_manifest.csv` - the registration record of every run that was executed, and the join key between the pipeline and the results. |
 | `source_data/` | **One file per published figure and per published table** - the exact values behind Figures 2-7 and Tables 1-4, S1-S5. |
 | `figure_code/` | **One script per published figure**, reading only the matching `source_data/` file. |
-| `figures/` | The published figures, Figure 1-7, PNG at 300 dpi, as produced by `figure_code/`. |
+| `figures/` | The published figures `fig1.png` ... `fig7.png` (300 dpi). Figure 1 also ships as `fig1.pptx`, a fully editable PowerPoint file - it is a schematic, not a data plot. |
 | `reference/` | Agilent SureSelect V6 Covered target BED, in GRCh38 and GRCh37/b37 coordinates. |
 | `EXPERIMENT-DESIGN.md` | The experimental design: depth grid, blocks, and why the matrix is nested rather than full-factorial. |
 
@@ -128,7 +128,7 @@ Every published figure and table has its **own** data file under `source_data/`,
 
 | Published item | Data file | Code |
 |---|---|---|
-| Figure 1 - study design | *(schematic, no data)* | `figure_code/Fig1_design.py` |
+| Figure 1 - study design | *(schematic, no data)* | *(no code - edit `figures/fig1.pptx` directly)* |
 | Figure 2 - depth saturation | `source_data/Fig2_saturation.csv` | `figure_code/Fig2_saturation.R` |
 | Figure 3 - platform comparison at 30x | `source_data/Fig3_platform.csv` | `figure_code/Fig3_platform.R` |
 | Figure 4 - INDEL hard-filtering | `source_data/Fig4_hardfilter.csv` | `figure_code/Fig4_hardfilter.R` |
@@ -151,10 +151,13 @@ Every published figure and table has its **own** data file under `source_data/`,
 Rscript figure_code/Fig2_saturation.R
 ```
 
-The figure scripts are **R** (`ggplot2`; Fig 3/4 also need `tidyr`, Fig 6 also `dplyr` and `patchwork`).
-Figure 1 is a hand-laid-out schematic with no underlying data, so it is the one exception and is drawn in
-Python (`matplotlib`). Each script locates the repository relative to its own file, so it runs from any
-working directory.
+The figure scripts are **R only** (`ggplot2` and `patchwork`; Fig 6 also needs `dplyr`). Each script
+locates the repository relative to its own file, so it runs from any working directory, and writes
+`figures/figN.png` at 300 dpi.
+
+No title is drawn inside any figure: per the *Scientific Data* submission guidelines the title belongs in
+the figure legend. Multi-panel figures are labelled (a), (b), ... Figure 1 is a schematic rather than a data
+plot and has no code - edit `figures/fig1.pptx` in PowerPoint and re-export if you need to change it.
 
 **Rebuild every source-data file from the processed results** (needs `pandas`):
 

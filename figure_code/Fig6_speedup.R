@@ -1,6 +1,9 @@
-# Figure 6 - CPU versus GPU acceleration of variant calling (132 matched pairs)
-# Reads source_data/Fig6_speedup.csv and writes figures/Fig6_speedup.png (300 dpi).
+# Figure 6 - GPU acceleration of variant calling, 132 matched pairs (GRCh38)
+# Reads source_data/Fig6_speedup.csv and writes figures/fig6.png (300 dpi).
 #   Rscript figure_code/Fig6_speedup.R
+# Panels: (a) per-pair wall-time, (b) median speed-up versus depth. No title is drawn on the figure.
+# The pairing grid covers 5, 10, 15, 30, 50, 100, 200x and full depth: 300x and 400x were run on CPU
+# only (T1 high-depth extension), so they have no GPU twin and cannot appear here.
 # Runs from any working directory. Needs: ggplot2, dplyr, patchwork
 suppressPackageStartupMessages({library(ggplot2); library(dplyr); library(patchwork)})
 
@@ -17,21 +20,21 @@ src <- function(f) file.path(.root, "source_data", f)
 out <- function(f) { d <- file.path(.root, "figures")
                      dir.create(d, showWarnings = FALSE, recursive = TRUE); file.path(d, f) }
 
-d <- read.csv(src("Fig6_speedup.csv"))
-CALLER <- c(gatk4_hc = "#4C72B0", deepvariant = "#DD8452")
-LAB <- c(gatk4_hc = "HaplotypeCaller", deepvariant = "DeepVariant")
+CALLER_LAB <- c(gatk4_hc = "GATK4 HaplotypeCaller", deepvariant = "DeepVariant")
+CALLER_COL <- c("GATK4 HaplotypeCaller" = "#4C72B0", "DeepVariant" = "#DD8452")
 
-guides <- data.frame(f = c(5, 10, 20))
-p1 <- ggplot(d, aes(call_sec_cpu, call_sec_gpu, colour = caller_pair)) +
-  geom_abline(data = guides, aes(slope = 1 / f, intercept = 0),
+d <- read.csv(src("Fig6_speedup.csv"))
+d$caller_pair <- factor(CALLER_LAB[d$caller_pair], levels = names(CALLER_COL))
+
+guides_df <- data.frame(f = c(5, 10, 20))
+pa <- ggplot(d, aes(call_sec_cpu, call_sec_gpu, colour = caller_pair)) +
+  geom_abline(data = guides_df, aes(slope = 1 / f, intercept = 0),
               linetype = "dashed", colour = "grey60", linewidth = .35) +
   geom_point(size = 1.8, alpha = .85) +
   scale_x_log10() + scale_y_log10() +
-  scale_colour_manual(values = CALLER, labels = LAB) +
-  labs(title = "Per-pair calling wall-time", x = "CPU calling time (s)",
-       y = "GPU calling time (s)", colour = NULL,
-       caption = "dashed guides: 5x, 10x, 20x") +
-  theme_bw(base_size = 11) + theme(legend.position = "bottom")
+  scale_colour_manual(values = CALLER_COL) +
+  labs(x = "CPU calling time (s)", y = "GPU calling time (s)", colour = NULL) +
+  theme_bw(base_size = 11)
 
 lv <- c("5", "10", "15", "30", "50", "100", "200", "full")
 med <- d %>%
@@ -39,17 +42,17 @@ med <- d %>%
   group_by(caller_pair, target_depth_x) %>%
   summarise(speedup = median(speedup), .groups = "drop")
 
-p2 <- ggplot(med, aes(target_depth_x, speedup, colour = caller_pair, group = caller_pair)) +
+pb <- ggplot(med, aes(target_depth_x, speedup, colour = caller_pair, group = caller_pair)) +
   geom_line(linewidth = .8) + geom_point(size = 2.2) +
-  scale_colour_manual(values = CALLER, labels = LAB) +
-  labs(title = "Median speed-up versus depth", x = "Nominal on-target depth",
-       y = "Speed-up (CPU / GPU)", colour = NULL) +
+  scale_colour_manual(values = CALLER_COL) +
+  labs(x = "Nominal on-target depth (X)", y = "Speed-up (CPU / GPU wall-time)", colour = NULL) +
   theme_bw(base_size = 11) +
-  theme(legend.position = "bottom", panel.grid.major.x = element_blank())
+  theme(panel.grid.major.x = element_blank())
 
-p <- (p1 | p2) + plot_annotation(
-  title = "Figure 6 - GPU acceleration of variant calling (NVIDIA Parabricks)",
-  theme = theme(plot.title = element_text(size = 13, face = "bold")))
+p <- (pa | pb) +
+  plot_layout(guides = "collect") +
+  plot_annotation(tag_levels = "a", tag_prefix = "(", tag_suffix = ")") &
+  theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
-ggsave(out("Fig6_speedup.png"), p, width = 11.5, height = 5, dpi = 300)
-cat("->", out("Fig6_speedup.png"), "\n")
+ggsave(out("fig6.png"), p, width = 11, height = 4.8, dpi = 300)
+cat("->", out("fig6.png"), "\n")
