@@ -4,7 +4,7 @@ Analysis code and processed benchmarking outputs accompanying the *Scientific Da
 **"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking."**
 
 The raw sequencing reads are deposited in the NCBI Sequence Read Archive under BioProject
-**PRJNA1506792** (BioSample SAMN62149305; held until publication, Run accessions pending).
+**PRJNA1506792** (study SRP723789; BioSample SAMN62149305; Runs **SRR39986369** Illumina, **SRR39986368** BGI, **SRR39986367** GeneMind), held until publication.
 This repository holds everything downstream of them: the pipeline that produced the 450 benchmarking runs,
 and every table and figure reported in the paper. Nothing here is under embargo — the processed results,
 QC tables and code are openly available now.

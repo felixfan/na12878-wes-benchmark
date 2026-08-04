@@ -15,7 +15,7 @@ authors:
       Phil Rivers Technology; West Institute of Computing Technology,
       Chinese Academy of Sciences
     email: felixfanyh@connect.hku.hk
-    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # AUTHOR TO FILL
+    orcid: 'https://orcid.org/0000-0001-9677-3777'
   - family-names: Huang
     given-names: Ming
     affiliation: Phil Rivers Technology
@@ -29,6 +29,7 @@ authors:
       Phil Rivers Technology; West Institute of Computing Technology,
       Chinese Academy of Sciences; Turing-Darwin Laboratory
     email: g.niu@philrivers.com
+    orcid: 'https://orcid.org/0000-0002-3405-7983'
 abstract: >-
   Analysis framework and processed benchmarking outputs for deep
   whole-exome sequencing of the Genome in a Bottle reference sample
@@ -60,8 +61,8 @@ keywords:
 license: CC-BY-4.0
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
 repository-code: 'https://github.com/felixfan/na12878-wes-benchmark'
-version: 1.0.0
-date-released: '2026-08-03'
+version: 1.0.1
+date-released: '2026-08-04'
 preferred-citation:
   type: article
   title: >-

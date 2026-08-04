@@ -1,11 +1,12 @@
 {
   "title": "Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking: analysis framework and processed results",
   "upload_type": "dataset",
-  "description": "<p>Analysis framework and processed benchmarking outputs accompanying the <i>Scientific Data</i> Data Descriptor <b>\"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking\"</b>.</p><p>Whole-exome sequencing (Agilent SureSelect Human All Exon V6, PE150) of a single aliquoted genomic DNA stock from the Genome in a Bottle reference cell line NA12878 (GM12878), sequenced in parallel on three platforms with distinct chemistries: Illumina NovaSeq 6000, BGI DNBSEQ-T7 and GeneMind SURFSeq 5000, to a mean on-target depth of 627 to 742x. Because all libraries derive from the same DNA, the resource separates platform and pipeline effects from biological variation.</p><p><b>Contents.</b> (1) The deterministic analysis framework that produced 450 benchmarking runs, in which every run is fully specified by a run_id encoding sample, reference build, aligner, caller, hardware, target depth and random seed, with all tool versions pinned. (2) The aggregated long-format results table (5,448 rows), per-run coverage and wall-clock timing tables, CPU-versus-GPU site-level concordance and quality tables, and sample identity (somalier) and contamination (VerifyBamID2) QC. (3) The Agilent SureSelect V6 Covered target BED in both GRCh38 and GRCh37/b37 coordinates, defining the benchmark region. (4) One source-data file per published figure and per published table, with one standalone R script per figure.</p><p>The design spans an 18-point on-target depth titration (5x to 400x plus full depth, three seeds per sub-full point), two callers (GATK4 HaplotypeCaller and DeepVariant) run on both CPU and GPU (NVIDIA Parabricks), and two reference builds, each evaluated against the GIAB HG001 v4.2.1 benchmark with hap.py and rtg vcfeval.</p><p><b>Raw reads</b> are in the NCBI Sequence Read Archive under BioProject PRJNA1506792 and are not duplicated here. The GIAB HG001 v4.2.1 truth set is distributed by NIST/NCBI and is not redistributed here.</p><p><b>Licensing.</b> Data and documentation under CC BY 4.0; the code under MIT (see LICENSE and LICENSE-DATA in the archive).</p>",
+  "description": "<p>Analysis framework and processed benchmarking outputs accompanying the <i>Scientific Data</i> Data Descriptor <b>\"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking\"</b>.</p><p>Whole-exome sequencing (Agilent SureSelect Human All Exon V6, PE150) of a single aliquoted genomic DNA stock from the Genome in a Bottle reference cell line NA12878 (GM12878), sequenced in parallel on three platforms with distinct chemistries: Illumina NovaSeq 6000, BGI DNBSEQ-T7 and GeneMind SURFSeq 5000, to a mean on-target depth of 627 to 742x. Because all libraries derive from the same DNA, the resource separates platform and pipeline effects from biological variation.</p><p><b>Contents.</b> (1) The deterministic analysis framework that produced 450 benchmarking runs, in which every run is fully specified by a run_id encoding sample, reference build, aligner, caller, hardware, target depth and random seed, with all tool versions pinned. (2) The aggregated long-format results table (5,448 rows), per-run coverage and wall-clock timing tables, CPU-versus-GPU site-level concordance and quality tables, and sample identity (somalier) and contamination (VerifyBamID2) QC. (3) The Agilent SureSelect V6 Covered target BED in both GRCh38 and GRCh37/b37 coordinates, defining the benchmark region. (4) One source-data file per published figure and per published table, with one standalone R script per figure.</p><p>The design spans an 18-point on-target depth titration (5x to 400x plus full depth, three seeds per sub-full point), two callers (GATK4 HaplotypeCaller and DeepVariant) run on both CPU and GPU (NVIDIA Parabricks), and two reference builds, each evaluated against the GIAB HG001 v4.2.1 benchmark with hap.py and rtg vcfeval.</p><p><b>Raw reads</b> are in the NCBI Sequence Read Archive under BioProject PRJNA1506792 (study SRP723789; runs SRR39986367, SRR39986368 and SRR39986369) and are not duplicated here. The GIAB HG001 v4.2.1 truth set is distributed by NIST/NCBI and is not redistributed here.</p><p><b>Licensing.</b> Data and documentation under CC BY 4.0; the code under MIT (see LICENSE and LICENSE-DATA in the archive).</p>",
   "creators": [
     {
       "name": "Fan, Yanhui",
-      "affiliation": "Phil Rivers Technology; West Institute of Computing Technology, Chinese Academy of Sciences"
+      "affiliation": "Phil Rivers Technology; West Institute of Computing Technology, Chinese Academy of Sciences",
+      "orcid": "0000-0001-9677-3777"
     },
     {
       "name": "Huang, Ming",
@@ -17,13 +18,14 @@
     },
     {
       "name": "Niu, Gang",
-      "affiliation": "Phil Rivers Technology; West Institute of Computing Technology, Chinese Academy of Sciences; Turing-Darwin Laboratory"
+      "affiliation": "Phil Rivers Technology; West Institute of Computing Technology, Chinese Academy of Sciences; Turing-Darwin Laboratory",
+      "orcid": "0000-0002-3405-7983"
     }
   ],
   "license": "cc-by-4.0",
   "access_right": "open",
   "language": "eng",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "NA12878",
     "HG001",
@@ -41,11 +43,17 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "PRJNA1506792",
+      "identifier": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1506792",
       "relation": "isSupplementTo",
       "resource_type": "dataset",
-      "scheme": "other"
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/felixfan/na12878-wes-benchmark",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
     }
   ],
-  "notes": "AUTHOR TO COMPLETE BEFORE PUBLISHING: (1) BioProject accession filled in 2026-08-04; add the three SRA Run accessions once issued; (2) add the Scientific Data article DOI as a related identifier with relation 'isSupplementTo' once accepted; (3) add ORCID iDs to creators; (4) add grant/funding information under 'grants' if the funder is in the OpenAIRE registry."
+  "notes": "AUTHOR TO COMPLETE AFTER ACCEPTANCE: add the Scientific Data article DOI as a related identifier with relation 'isSupplementTo'. SRA identifiers (BioProject PRJNA1506792, study SRP723789, BioSample SAMN62149305, runs SRR39986367-SRR39986369) are recorded; the study received no specific grant, so no funding entry is given."
 }
