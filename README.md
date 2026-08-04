@@ -199,9 +199,13 @@ benchmark region; the capture design itself is Agilent's.
 
 ## Citing
 
-See [`CITATION.cff`](CITATION.cff). Please cite the Data Descriptor, and the archived release
-(Zenodo DOI **[PENDING-ACCESSION]**) if you reuse the code or processed tables. The development
-repository is at <https://github.com/felixfan/na12878-wes-benchmark>.
+See [`CITATION.cff`](CITATION.cff). Please cite the Data Descriptor, and the archived release if you
+reuse the code or processed tables.
+
+- **All versions (concept DOI):** [10.5281/zenodo.21792674](https://doi.org/10.5281/zenodo.21792674)
+- **v1.0.1, the version described in the paper:** [10.5281/zenodo.21792675](https://doi.org/10.5281/zenodo.21792675)
+
+The development repository is at <https://github.com/felixfan/na12878-wes-benchmark>.
 
 ## Third-party data
 

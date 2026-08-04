@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+doi: 10.5281/zenodo.21792674
 title: >-
   Deep whole-exome sequencing of NA12878 (HG001) on three platforms
   for germline variant-calling benchmarking - analysis framework and
@@ -62,6 +63,14 @@ license: CC-BY-4.0
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
 repository-code: 'https://github.com/felixfan/na12878-wes-benchmark'
 version: 1.0.1
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21792675
+    description: >-
+      Zenodo archive of release v1.0.1, the version described in the Data Descriptor
+  - type: doi
+    value: 10.5281/zenodo.21792674
+    description: Zenodo concept DOI, resolves to the latest version
 date-released: '2026-08-04'
 preferred-citation:
   type: article
