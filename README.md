@@ -1,5 +1,9 @@
 # Deep WES of NA12878 (HG001) on three platforms — benchmarking framework and processed results
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21792674.svg)](https://doi.org/10.5281/zenodo.21792674)
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
+
 Analysis code and processed benchmarking outputs accompanying the *Scientific Data* Data Descriptor
 **"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking."**
 
