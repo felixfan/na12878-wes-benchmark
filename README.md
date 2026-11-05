@@ -4,11 +4,15 @@ Analysis code and processed results for NA12878/HG001 sequenced on Illumina Nova
 
 ## Version 1.1.0
 
+<!-- version-doi-start -->
+**Current release: [v1.1.0 on Zenodo](https://doi.org/10.5281/zenodo.23984550) (DOI: 10.5281/zenodo.23984550).** The same release is available from [GitHub Releases](https://github.com/felixfan/na12878-wes-benchmark/releases/tag/v1.1.0).
+<!-- version-doi-end -->
+
 This release replaces the 66 formal GPU HaplotypeCaller runs with results from the 2026-11-05 rerun. Both GPU BQSR steps now use the same V6 capture target BED as the CPU workflow, with zero additional interval padding. The archive contains 454 run identifiers. The analyses use 450 runs and 132 matched CPU and GPU pairs. Four acceptance runs with seed s1 are retained as historical records and excluded from analyses.
 
-The experimental run identifiers are stable across releases. Identify a result using both the release version and its run_id when comparing versions. The previous v1.0.1 snapshot is available at [Zenodo](https://doi.org/10.5281/zenodo.21792675).
+The experimental run identifiers are stable across releases. Identify a result using both the release version and its run_id when comparing versions.
 
-Raw reads are publicly available under BioProject PRJNA1506792, study SRP723789 and BioSample SAMN62149305. The platform runs are SRR39986369 for Illumina, SRR39986368 for BGI and SRR39986367 for GeneMind.
+Raw reads are publicly available under [BioProject PRJNA1506792](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1506792), [SRA study SRP723789](https://www.ncbi.nlm.nih.gov/sra/?term=SRP723789) and [BioSample SAMN62149305](https://www.ncbi.nlm.nih.gov/biosample/SAMN62149305). The platform runs are [SRR39986369](https://www.ncbi.nlm.nih.gov/sra/?term=SRR39986369) for Illumina, [SRR39986368](https://www.ncbi.nlm.nih.gov/sra/?term=SRR39986368) for BGI and [SRR39986367](https://www.ncbi.nlm.nih.gov/sra/?term=SRR39986367) for GeneMind.
 
 ## Contents
 
@@ -105,13 +109,13 @@ GATK-family calls use INDEL hard filtering. SNV records are exempted by the type
 
 ## Citing this release
 
-Use the version-specific Zenodo DOI for the release used in your analysis. CITATION.cff records the release version. Before archiving, its DOI is the stable concept DOI. The assigned version DOI can be recorded there after archiving.
+For version 1.1.0, cite [Zenodo v1.1.0](https://doi.org/10.5281/zenodo.23984550), DOI 10.5281/zenodo.23984550. CITATION.cff provides the citation metadata for this release.
 
-<!-- version-doi-start -->
-Version 1.1.0 is archived at [Zenodo](https://doi.org/10.5281/zenodo.23984550).
-<!-- version-doi-end -->
+The [concept DOI](https://doi.org/10.5281/zenodo.21792674) identifies the resource across versions.
 
-The concept DOI resolves to the version collection at [Zenodo](https://doi.org/10.5281/zenodo.21792674). The previous v1.0.1 DOI identifies the earlier processing snapshot.
+## Previous releases
+
+The [historical v1.0.1 snapshot](https://doi.org/10.5281/zenodo.21792675) contains the earlier GPU BQSR results. The updated results described above are available in v1.1.0.
 
 ## Licenses
 
