@@ -1,5 +1,5 @@
 # Figure 5 - CPU versus GPU concordance, 132 matched pairs (GRCh38)
-# Reads source_data/Fig5_concordance.csv and writes figures/fig5.png (300 dpi).
+# Reads source_data/Fig5_concordance.csv and writes figures/fig5.png (300 dpi) and figures/fig5.pdf (vector).
 #   Rscript figure_code/Fig5_concordance.R
 # Single panel. No title is drawn on the figure - it belongs in the legend.
 # Runs from any working directory. Needs: ggplot2
@@ -36,4 +36,5 @@ p <- ggplot(d, aes(CPU_F1, GPU_F1, colour = caller_pair, shape = variant_type)) 
   theme(legend.position = "right", panel.grid.minor = element_blank())
 
 ggsave(out("fig5.png"), p, width = 7, height = 5.2, dpi = 300)
-cat("->", out("fig5.png"), "\n")
+ggsave(out("fig5.pdf"), p, width = 7, height = 5.2, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig5.png"), "and", out("fig5.pdf"), "\n")

@@ -1,5 +1,5 @@
 # Figure 2 - Depth saturation of variant-calling accuracy (DeepVariant, GRCh38)
-# Reads source_data/Fig2_saturation.csv and writes figures/fig2.png (300 dpi).
+# Reads source_data/Fig2_saturation.csv and writes figures/fig2.png (300 dpi) and figures/fig2.pdf (vector).
 #   Rscript figure_code/Fig2_saturation.R
 # Panels: (a) SNV, (b) INDEL. No title is drawn on the figure - it belongs in the legend.
 # Runs from any working directory. Needs: ggplot2, patchwork
@@ -44,4 +44,5 @@ p <- (panel("SNV") | panel("INDEL")) +
   theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
 ggsave(out("fig2.png"), p, width = 11, height = 4.8, dpi = 300)
-cat("->", out("fig2.png"), "\n")
+ggsave(out("fig2.pdf"), p, width = 11, height = 4.8, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig2.png"), "and", out("fig2.pdf"), "\n")

@@ -1,5 +1,5 @@
 # Figure 4 - GATK INDEL-only hard-filtering, before and after (GATK4 HaplotypeCaller, full depth, GRCh38)
-# Reads source_data/Fig4_hardfilter.csv and writes figures/fig4.png (300 dpi).
+# Reads source_data/Fig4_hardfilter.csv and writes figures/fig4.png (300 dpi) and figures/fig4.pdf (vector).
 #   Rscript figure_code/Fig4_hardfilter.R
 # Panels: (a) F1, (b) precision, (c) recall. No title is drawn on the figure.
 # Runs from any working directory. Needs: ggplot2, patchwork
@@ -45,4 +45,5 @@ p <- (panel("F1", "F1") | panel("precision", "Precision") | panel("recall", "Rec
   theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
 ggsave(out("fig4.png"), p, width = 11, height = 4.4, dpi = 300)
-cat("->", out("fig4.png"), "\n")
+ggsave(out("fig4.pdf"), p, width = 11, height = 4.4, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig4.png"), "and", out("fig4.pdf"), "\n")

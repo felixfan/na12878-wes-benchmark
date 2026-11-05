@@ -5,7 +5,7 @@
 #   supplementary material.
 #
 # Usage:
-#   nohup bash scripts/monitor.sh 5 /data/test_data/felix/output/plan/resource_timeseries.csv >/dev/null 2>&1 &
+#   nohup bash scripts/monitor.sh 5 /path/to/WORKDIR/plan/resource_timeseries.csv >/dev/null 2>&1 &
 #   ...  run the calibrate / run_one batch  ...
 #   pkill -f monitor.sh          # stop sampling
 #

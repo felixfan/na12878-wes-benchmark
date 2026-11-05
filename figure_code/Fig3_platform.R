@@ -1,5 +1,5 @@
 # Figure 3 - Cross-platform comparison at nominal 30x (DeepVariant, GRCh38)
-# Reads source_data/Fig3_platform.csv and writes figures/fig3.png (300 dpi).
+# Reads source_data/Fig3_platform.csv and writes figures/fig3.png (300 dpi) and figures/fig3.pdf (vector).
 #   Rscript figure_code/Fig3_platform.R
 # Panels: (a) precision, (b) recall, (c) F1. No title is drawn on the figure.
 # Runs from any working directory. Needs: ggplot2, patchwork
@@ -46,4 +46,5 @@ p <- (panel("precision", "Precision") | panel("recall", "Recall") | panel("F1", 
   theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
 ggsave(out("fig3.png"), p, width = 11, height = 4.4, dpi = 300)
-cat("->", out("fig3.png"), "\n")
+ggsave(out("fig3.pdf"), p, width = 11, height = 4.4, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig3.png"), "and", out("fig3.pdf"), "\n")

@@ -14,7 +14,7 @@
 #
 # Usage (no root required; installs into ~/bin by default):
 #   bash scripts/install_wrappers.sh
-#   MOUNTS="/home/felix /data/test_data/felix /path/to/fastq" bash scripts/install_wrappers.sh
+#   MOUNTS="/home/USER /path/to/input /path/to/output" bash scripts/install_wrappers.sh
 #   BIN=/somewhere/bin bash scripts/install_wrappers.sh
 set -euo pipefail
 
@@ -22,8 +22,8 @@ BIN="${BIN:-$HOME/bin}"                                  # no root needed; make 
 # Mount points (space-separated): every top-level directory the containers must see, typically the
 # one holding the reference/GIAB/bwa and the one holding WORKDIR.
 # NOTE: if the fastq files live elsewhere, append their top-level directory to MOUNTS.
-MOUNTS="${MOUNTS:-/home/felix /data/test_data/felix}"
-BWA_BIN="${BWA_BIN:-/home/felix/bwa-0.7.15/bwa}"         # locally built bwa 0.7.15
+MOUNTS="${MOUNTS:-$HOME $PWD}"
+BWA_BIN="${BWA_BIN:-$HOME/bwa-0.7.15/bwa}"         # locally built bwa 0.7.15
 mkdir -p "$BIN"
 
 # assemble the -v arguments, one per mount point

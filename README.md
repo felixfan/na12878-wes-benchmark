@@ -1,217 +1,118 @@
-# Deep WES of NA12878 (HG001) on three platforms — benchmarking framework and processed results
+# NA12878 whole exome sequencing benchmark
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21792674.svg)](https://doi.org/10.5281/zenodo.21792674)
-[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
-[![License: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
+Analysis code and processed results for NA12878/HG001 sequenced on Illumina NovaSeq 6000, BGI DNBSEQ-T7 and GeneMind SURFSeq 5000.
 
-Analysis code and processed benchmarking outputs accompanying the *Scientific Data* Data Descriptor
-**"Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking."**
+## Version 1.1.0
 
-The raw sequencing reads are deposited in the NCBI Sequence Read Archive under BioProject
-**PRJNA1506792** (study SRP723789; BioSample SAMN62149305; Runs **SRR39986369** Illumina, **SRR39986368** BGI, **SRR39986367** GeneMind), held until publication.
-This repository holds everything downstream of them: the pipeline that produced the 450 benchmarking runs,
-and every table and figure reported in the paper. Nothing here is under embargo — the processed results,
-QC tables and code are openly available now.
+This release replaces the 66 formal GPU HaplotypeCaller runs with results from the 2026-11-05 rerun. Both GPU BQSR steps now use the same V6 capture target BED as the CPU workflow, with zero additional interval padding. The archive contains 454 run identifiers. The analyses use 450 runs and 132 matched CPU and GPU pairs. Four acceptance runs with seed s1 are retained as historical records and excluded from analyses.
 
----
+The experimental run identifiers are stable across releases. Identify a result using both the release version and its run_id when comparing versions. The previous v1.0.1 snapshot is available at [Zenodo](https://doi.org/10.5281/zenodo.21792675).
 
-## What is here
+Raw reads are publicly available under BioProject PRJNA1506792, study SRP723789 and BioSample SAMN62149305. The platform runs are SRR39986369 for Illumina, SRR39986368 for BGI and SRR39986367 for GeneMind.
+
+## Contents
 
 | Path | Contents |
 |---|---|
-| `scripts/` | The analysis framework that produced the runs (shell + Python). Every run is fully determined by its `run_id`. |
-| `scripts/jobs/` | The run lists actually executed (`jobs_*.list`). |
-| `configs/` | `na12878.paths.template.sh` - data/resource locations. Copy, fill in the `/PATH/TO/...` placeholders, use. |
-| `schema/` | Authoritative data dictionary for the processed result tables. |
-| `results/` | Processed pipeline output: the full accuracy, coverage, timing, concordance and QC tables (see below). |
-| `results/plan/` | `run_manifest.csv` - the registration record of every run that was executed, and the join key between the pipeline and the results. |
-| `source_data/` | **One file per published figure and per published table** - the exact values behind Figures 2-7 and Tables 1-4, S1-S5. |
-| `figure_code/` | **One script per published figure**, reading only the matching `source_data/` file. |
-| `figures/` | The published figures `fig1.png` ... `fig7.png` (300 dpi). Figure 1 also ships as `fig1.pptx`, a fully editable PowerPoint file - it is a schematic, not a data plot. |
-| `reference/` | Agilent SureSelect V6 Covered target BED, in GRCh38 and GRCh37/b37 coordinates. |
-| `EXPERIMENT-DESIGN.md` | The experimental design: depth grid, blocks, and why the matrix is nested rather than full-factorial. |
+| results/benchmark_long_all.csv | 5,448 benchmark rows covering 454 archived run identifiers |
+| results/plan/run_manifest.csv | Run identity, versions and benchmark output prefixes |
+| results/run_coverage_all.csv | Measured on-target coverage for each archived run |
+| results/resource_usage_all.csv | Calling and total wall-clock time for each archived run |
+| results/pair_concordance.tsv | 134 archived CPU and GPU pairs, with three variant-type rows per pair |
+| results/pair_quality.tsv | Four site categories per archived pair |
+| results/revisions/v1.1.0/ | Affected run list, interval protocol, stage timings, previous affected records and old/new metric comparison |
+| results/qc/ | Sequencing QC, identity, contamination and SNV filtering assessment |
+| source_data/ | One CSV per figure or table, 15 files in total |
+| figure_code/ | R scripts for Figures 2 to 7 |
+| figures/ | 300 dpi PNG and vector PDF figures, plus the editable Figure 1 schematic |
+| reference/ | SureSelect V6 Covered target BED files for GRCh38 and GRCh37/b37 |
+| scripts/ | Pipeline, aggregation and source-data generation scripts |
+| schema/ | Definitions of the benchmark and companion tables |
+| SHA256SUMS | SHA-256 inventory of the package files |
 
-### Key result files
+The two archived acceptance pairs are excluded when generating the manuscript source data. Table4 reports 132 total matched pairs. Quality medians omit pairs with no sites in the relevant category. The discordant category has 91 nonempty pairs in this release.
 
-| File | Rows | What it is |
-|---|---|---|
-| `results/benchmark_long_all.csv` | 5,448 | **The main table.** One row per run x filter x variant type x genotype class. 454 runs (450 analysed + 4 acceptance replicates with seed `s1`, excluded from all analyses). |
-| `results/run_coverage_all.csv` | 454 | Per-run measured on-target depth and >=10/20/30/50x fractions (mosdepth). |
-| `results/resource_usage_all.csv` | 454 | Per-run wall-clock time, one row per `run_id`. Seven runs were executed more than once; their timings are collapsed to the median. |
-| `results/pair_concordance.tsv` | 402 | Site-by-site CPU-GPU comparison, 134 pairs x {SNV, INDEL, ALL}. |
-| `results/pair_quality.tsv` | 536 | DP/GQ/QUAL by concordance category, 134 pairs x 4 categories. |
-| `results/qc/qc_metrics.csv` | 3 | Per-library sequencing QC (fastp, samtools flagstat, Picard MarkDuplicates and CollectHsMetrics). |
-| `results/qc/*` | - | Sample identity (somalier), contamination (VerifyBamID2) and the SNV hard-filter test. |
-| `results/plan/run_manifest.csv` | 454 | **The execution record.** One row per `run_id`: platform, reference, aligner, caller, hardware, target and measured depth, seed, pinned tool versions, GIAB version, target BED. `aggregate_happy.py` joins it to the hap.py output to build the main table, so it is the reproducibility anchor of the whole chain. Runs executed more than once are recorded once (last registration). |
-| `results/sra_file_manifest.tsv` | 6 | Raw FASTQ sizes (exact bytes) and MD5 checksums. |
+## Results and interpretation
 
-Analyses in the paper exclude the four `s1` acceptance-replicate runs, giving **450 runs** and **132 CPU↔GPU pairs**.
+HaplotypeCaller genotype concordance is 99.999% for SNVs and 99.993% for INDELs. Its maximum absolute CPU/GPU F1 difference is 0.000340. The overall maximum across both caller pairs remains 0.004570. The median calling-time speedup is approximately 9.9 for HaplotypeCaller and 8.4 for DeepVariant.
 
----
+The revised HaplotypeCaller GPU timings were measured in the November rerun. CPU and DeepVariant timings come from the earlier runs. Figure 6 reports the calling step alone. Total wall-clock time also includes processing and benchmarking, and depends on which upstream files were cached.
 
-## The `run_id` scheme
+These are technical validation results for one reference sample. The libraries were prepared from the same DNA stock at different times. Any platform interpretation should account for the library preparation and storage history described in the manuscript.
 
-Every result traces back to its inputs through a deterministic identifier:
+## Reproduce tables and figures
 
-```
-{sample}.{reference}.{aligner}.{caller}.{hardware}.{depth}.s{seed}
-```
+From the repository root, with pandas installed, run
 
-| Field | Allowed values |
-|---|---|
-| sample | `ZY_Illumina_NA12878`, `ZY_BGI_NA12878`, `ZY_GeneMind_NA12878` |
-| reference | `grch38`, `b37` |
-| aligner | `bwa-mem` (CPU), `pbrun_fq2bam` (GPU) |
-| caller | `gatk4_hc`, `deepvariant`, `pbrun_haplotypecaller`, `pbrun_deepvariant` |
-| hardware | `cpu`, `gpu` |
-| depth | `5x` `8x` `10x` `12x` `15x` `20x` `25x` `30x` `40x` `50x` `60x` `75x` `100x` `150x` `200x` `300x` `400x` `full` |
-| seed | `42` `43` `44` (sub-full), `0` (full depth, no sampling randomness), `1` (acceptance replicates, excluded) |
-
-Example: `ZY_BGI_NA12878.grch38.bwa-mem.deepvariant.cpu.30x.s42`
-
----
-
-## Reproducing
-
-**1. Point the config at your data.**
-
-```bash
-cp configs/na12878.paths.template.sh configs/na12878.paths.sh
-$EDITOR configs/na12878.paths.sh          # fill in every /PATH/TO/... placeholder
-```
-
-**2. Calibrate** (measures each platform's native on-target depth, needed to convert a target depth into a sampling fraction):
-
-```bash
-HAPPY_CONFIG=configs/na12878.paths.sh scripts/calibrate.sh
-```
-
-**3. Enumerate the run plan:**
-
-```bash
-HAPPY_CONFIG=configs/na12878.paths.sh scripts/gen_plan.sh      # writes jobs.list + run_plan.csv
-```
-
-**4. Execute runs** (each is idempotent; completed steps are skipped on re-run):
-
-```bash
-while read r; do HAPPY_CONFIG=configs/na12878.paths.sh scripts/run_one.sh "$r" </dev/null; done < jobs.list
-```
-
-`run_one.sh` does: seqtk downsampling → alignment + duplicate marking → mosdepth → BQSR (GATK family only)
-→ variant calling → INDEL-only hard-filtering (GATK family) → `bcftools norm` → hap.py benchmarking,
-then appends to the manifest, coverage and resource tables.
-
-**5. Aggregate and plot:**
-
-```bash
-python scripts/aggregate_happy.py --manifest results/plan/run_manifest.csv \
-       --happydir <workdir>/happy --out results/benchmark_long_all.csv
-python scripts/make_source_data.py            # results/ -> source_data/
-Rscript figure_code/Fig2_saturation.R         # source_data/ -> figures/  (one script per figure)
-```
-
-The `happy_prefix` column of the shipped manifest is relative (`happy/<run_id>`); point
-`--happydir` at wherever your hap.py output lives.
-
-### Pinned tool versions
-
-BWA-MEM 0.7.15 · GATK 4.3.0.0 · DeepVariant 1.9.0 · NVIDIA Parabricks 4.7.0 · samtools/bcftools 1.23.1 ·
-mosdepth 0.3.3 · seqtk 1.5 · hap.py 0.3.15 with rtg-tools 3.12.1 · fastp 1.3.3 · MultiQC 1.35 ·
-VerifyBamID2 2.0.1 · somalier 0.2.19
-
-Results are only comparable across runs when these versions match. The CPU↔GPU comparison in particular
-relies on Parabricks embedding the same GATK 4.3.0.0 and DeepVariant 1.9.0 engines as the CPU branch.
-
----
-
-## Source data and figures
-
-Every published figure and table has its **own** data file under `source_data/`, and every figure has its
-**own** script under `figure_code/`. Nothing is bundled: to check one number in one panel you open one CSV.
-
-| Published item | Data file | Code |
-|---|---|---|
-| Figure 1 - study design | *(schematic, no data)* | *(no code - edit `figures/fig1.pptx` directly)* |
-| Figure 2 - depth saturation | `source_data/Fig2_saturation.csv` | `figure_code/Fig2_saturation.R` |
-| Figure 3 - platform comparison at 30x | `source_data/Fig3_platform.csv` | `figure_code/Fig3_platform.R` |
-| Figure 4 - INDEL hard-filtering | `source_data/Fig4_hardfilter.csv` | `figure_code/Fig4_hardfilter.R` |
-| Figure 5 - CPU-GPU concordance | `source_data/Fig5_concordance.csv` | `figure_code/Fig5_concordance.R` |
-| Figure 6 - CPU-GPU acceleration | `source_data/Fig6_speedup.csv` | `figure_code/Fig6_speedup.R` |
-| Figure 7 - reference build | `source_data/Fig7_reference.csv` | `figure_code/Fig7_reference.R` |
-| Table 1 - sequencing QC | `source_data/Table1_QC.csv` | - |
-| Table 2 - raw files, sizes, MD5 | `source_data/Table2_files.csv` | - |
-| Table 3 - site-level concordance | `source_data/Table3_concordance.csv` | - |
-| Table 4 - quality of concordant and discordant sites | `source_data/Table4_quality.csv` | - |
-| Table S1 - per-pair quality (132 pairs) | `source_data/TableS1_pair_quality.csv` | - |
-| Table S2 - identity and contamination | `source_data/TableS2_identity_contamination.csv` | - |
-| Table S3 - SNV hard-filter test | `source_data/TableS3_snv_hardfilter.csv` | - |
-| Table S4 - nominal versus measured depth | `source_data/TableS4_depth_mapping.csv` | - |
-| Table S5 - design matrix | `source_data/TableS5_design_matrix.csv` | - |
-
-**Redraw a figure** (writes a 300 dpi PNG into `figures/`):
-
-```bash
-Rscript figure_code/Fig2_saturation.R
-```
-
-The figure scripts are **R only** (`ggplot2` and `patchwork`; Fig 6 also needs `dplyr`). Each script
-locates the repository relative to its own file, so it runs from any working directory, and writes
-`figures/figN.png` at 300 dpi.
-
-No title is drawn inside any figure: per the *Scientific Data* submission guidelines the title belongs in
-the figure legend. Multi-panel figures are labelled (a), (b), ... Figure 1 is a schematic rather than a data
-plot and has no code - edit `figures/fig1.pptx` in PowerPoint and re-export if you need to change it.
-
-**Rebuild every source-data file from the processed results** (needs `pandas`):
-
-```bash
+~~~bash
 python scripts/make_source_data.py
-```
+~~~
 
-That regenerates all 15 files in `source_data/` from `results/`, so the chain
-`results/ -> source_data/ -> figures/` is reproducible end to end.
+This generates the 15 CSV files in source_data from the processed result tables. Regenerate the figures using
 
----
+~~~bash
+for script in figure_code/*.R; do Rscript "$script"; done
+~~~
 
-## Notes for reusers
+The figure scripts read source_data in this public package. The author's local manuscript folder uses source_data_v2. Figure 1 is an editable schematic in figures/fig1.pptx and has no numerical source-data CSV.
 
-- **Compare at matched *measured* on-target depth, not at nominal depth or gigabases.** Downsampling removes
-  proportionally fewer duplicate reads at smaller sampling fractions, so measured depth exceeds the nominal
-  label by a factor that falls from ~1.5 at the lowest depths to 1.0 at full depth. Use
-  `run_coverage_all.csv`; the mapping is tabulated in Supplementary Table S4 of the paper.
-- **`PASS` means different things per caller family.** For the GATK family it is *raw SNVs plus
-  hard-filtered INDELs* (SNV hard-filtering was measured to be net-negative and is deliberately not applied);
-  DeepVariant uses its own internal model. For the GATK family the unfiltered set is under `filter=ALL`;
-  for DeepVariant the `ALL` and `PASS` rows are identical, because the released call sets contain only
-  records DeepVariant itself passed.
-- **Benchmark scope.** All accuracy numbers are defined on the V6 Covered target ∩ GIAB HG001 v4.2.1
-  high-confidence regions. Behaviour outside that intersection is not characterised.
-- **Not covered by this dataset:** structural variants, copy-number variants, somatic calling, non-exonic
-  regions, and anything requiring more than one individual.
+The November local rendering used Python 3.13, pandas 3.0.3, R 4.5.0, ggplot2 4.0.3, dplyr 1.2.1 and patchwork 1.3.2. The R installation supports Cairo PDF output.
 
----
+## Reproduce the analysis
 
-## Licence
+Use a fresh WORKDIR for version 1.1.0. Configure input files and tool wrappers before running the pipeline.
 
-- **Code** (`scripts/`, `configs/`, `figure_code/`): MIT — see [`LICENSE`](LICENSE).
-- **Data and documentation** (`results/`, `source_data/`, `figures/`, `schema/`, `reference/`,
-  `EXPERIMENT-DESIGN.md`): CC BY 4.0 — see [`LICENSE-DATA`](LICENSE-DATA).
+~~~bash
+cp configs/na12878.paths.template.sh configs/na12878.paths.sh
+~~~
 
-The Agilent SureSelect V6 target BED under `reference/` is redistributed for reproducibility of the
-benchmark region; the capture design itself is Agilent's.
+Fill in the resource paths and a new output directory. Every input and output location must be visible inside the Docker containers. For example, set MOUNTS to include your home resources, input data and output filesystem when running scripts/install_wrappers.sh.
 
-## Citing
+~~~bash
+BIN="$HOME/bin-na12878-v110" MOUNTS="/home/USER /path/to/input /path/to/output" bash scripts/install_wrappers.sh
+export WRAPPER_BIN="$HOME/bin-na12878-v110"
+export PATH="$WRAPPER_BIN:$PATH"
+export HAPPY_CONFIG="$PWD/configs/na12878.paths.sh"
+bash scripts/calibrate.sh
+bash scripts/gen_plan.sh
+~~~
 
-See [`CITATION.cff`](CITATION.cff). Please cite the Data Descriptor, and the archived release if you
-reuse the code or processed tables.
+Review the generated plan before submitting jobs. It contains T1 with 312 CPU/GRCh38 runs, T3 with 132 GPU/GRCh38 runs and T4 with six CPU/b37 full-depth runs.
 
-- **All versions (concept DOI):** [10.5281/zenodo.21792674](https://doi.org/10.5281/zenodo.21792674)
-- **v1.0.1, the version described in the paper:** [10.5281/zenodo.21792675](https://doi.org/10.5281/zenodo.21792675)
+~~~bash
+while read -r run_id; do
+  THREADS=16 bash scripts/run_one.sh "$run_id" </dev/null
+done < /path/to/WORKDIR/plan/jobs.list
+~~~
 
-The development repository is at <https://github.com/felixfan/na12878-wes-benchmark>.
+GPU selection can be supplied using GPU_DEV. The default batch scheduler uses GPU indices starting at zero. Select resources appropriate to your server and avoid assigning jobs to occupied cards.
 
-## Third-party data
+The driver records the target BED checksum, protocol and Parabricks version in a per-run protocol.txt file for GPU GATK runs. Its completion marker controls reuse of the interval-restricted recalibration BAM. Existing output files from an unmarked or incompatible protocol cause a failure with guidance to select a fresh WORKDIR.
 
-The GIAB HG001 v4.2.1 benchmark used as ground truth is from the Genome in a Bottle Consortium
-(NIST/NCBI) and is **not** redistributed here — see the config template for the download location.
+The markers record the processing configuration. They do not replace review of the run logs and output files.
+
+Aggregate completed hap.py outputs using
+
+~~~bash
+python scripts/aggregate_happy.py --manifest /path/to/WORKDIR/plan/run_manifest.csv --happydir /path/to/WORKDIR/happy --out /path/to/benchmark_long.csv
+~~~
+
+## Tool versions
+
+BWA-MEM 0.7.15, GATK 4.3.0.0, DeepVariant 1.9.0, NVIDIA Parabricks 4.7.0, samtools and bcftools 1.23.1, mosdepth 0.3.3, seqtk 1.5, hap.py 0.3.15, rtg-tools 3.12.1, fastp 1.3.3 and MultiQC 1.35.
+
+GATK-family calls use INDEL hard filtering. SNV records are exempted by the type guard. PASS selects records passing the applicable filters, and ALL includes records regardless of FILTER status. The benchmark evaluates regions shared by the V6 targets and the GIAB HG001 v4.2.1 high-confidence regions. The direct site-level CPU/GPU comparison uses the normalized called variants across the calling target regions.
+
+## Citing this release
+
+Use the version-specific Zenodo DOI for the release used in your analysis. CITATION.cff records the release version. Before archiving, its DOI is the stable concept DOI. The assigned version DOI can be recorded there after archiving.
+
+<!-- version-doi-start -->
+The version-specific DOI for v1.1.0 will be assigned when this GitHub release is archived by Zenodo.
+<!-- version-doi-end -->
+
+The concept DOI resolves to the version collection at [Zenodo](https://doi.org/10.5281/zenodo.21792674). The previous v1.0.1 DOI identifies the earlier processing snapshot.
+
+## Licenses
+
+Code is licensed under MIT. Data and documentation are licensed under CC BY 4.0. See LICENSE and LICENSE-DATA for the third-party material notes. The GIAB truth VCFs and raw reads are obtained from their original repositories.

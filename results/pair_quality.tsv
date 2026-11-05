@@ -87,94 +87,94 @@ ZY_BGI_NA12878.grch38.deepvariant.full.s0	concordant	57149	24.80	469.00	22.00
 ZY_BGI_NA12878.grch38.deepvariant.full.s0	discordant	48	21.65	194.50	13.50	
 ZY_BGI_NA12878.grch38.deepvariant.full.s0	cpu_only	172	20.55	225.50	16.00	
 ZY_BGI_NA12878.grch38.deepvariant.full.s0	gpu_only	217	23.20	220.00	18.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	concordant	60766	2180.64	125.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	discordant	8	365.41	17.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	68	224.62	60.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	84	305.52	54.00	78.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	concordant	60879	2182.64	124.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	discordant	3	1467.02	63.00	50.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	72	420.55	97.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	67	460.64	68.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	concordant	60832	2179.64	124.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	discordant	1	5843.85	214.00	3.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	49	185.64	105.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	90	255.81	89.50	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	concordant	50800	265.64	15.00	88.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	discordant	4	90.58	2.50	7.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	44	50.14	10.00	42.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	56	54.12	14.00	57.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	concordant	50721	265.64	15.00	87.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	discordant	5	206.99	8.00	9.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	48	49.80	12.00	39.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	41	49.60	7.00	49.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	concordant	50626	266.64	15.00	87.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	discordant	5	121.80	3.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	51	82.25	14.00	42.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	54	52.34	10.50	59.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	concordant	54159	373.64	21.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	discordant	6	107.72	4.00	10.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	48	57.14	12.00	54.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	38	76.60	17.00	82.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	concordant	53952	376.06	21.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	discordant	5	159.10	4.00	14.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	47	35.48	11.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	27	70.32	5.00	14.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	concordant	54061	376.64	22.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	discordant	7	78.32	2.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	44	58.62	19.00	51.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	41	43.64	20.00	50.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	concordant	61672	4132.64	236.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	discordant	4	714.07	21.00	60.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	77	359.64	181.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	66	881.33	62.50	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	concordant	61707	4137.64	236.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	discordant	4	1685.79	77.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	90	200.64	177.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	65	391.05	97.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	concordant	61843	4118.64	235.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	discordant	3	190.96	5.00	20.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	73	385.64	193.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	76	610.14	111.50	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	concordant	57857	701.64	40.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	discordant	6	251.01	9.50	26.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	52	96.12	31.00	63.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	56	56.62	37.00	59.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	concordant	57750	706.06	40.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	discordant	3	414.06	13.00	30.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	48	105.12	20.00	54.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	38	80.14	28.00	93.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	concordant	57777	704.06	40.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	discordant	4	162.06	7.00	19.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	54	66.62	19.00	61.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	52	60.62	37.50	70.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	concordant	59554	1130.64	65.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	discordant	2	102.37	3.00	25.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	45	123.60	25.00	78.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	76	129.64	45.50	94.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	concordant	59515	1132.60	65.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	discordant	2	617.02	27.00	80.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	51	152.60	34.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	48	91.62	47.00	96.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	concordant	59443	1134.64	65.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	discordant	6	2637.01	110.50	66.50	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	46	109.64	45.50	96.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	49	372.64	91.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	concordant	41977	157.96	9.00	48.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	discordant	13	103.06	5.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	41	41.64	6.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	72	63.48	5.00	46.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	concordant	41803	158.64	9.00	47.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	discordant	11	94.98	3.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	51	37.64	6.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	64	37.32	5.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	concordant	41790	158.02	9.00	47.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	discordant	15	105.44	4.00	6.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	39	35.32	4.00	36.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	42	40.12	5.00	38.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	concordant	62732	12311.60	705.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	discordant	9	2547.02	104.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	cpu_only	90	322.14	319.00	99.00	
-ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	gpu_only	108	404.14	390.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	concordant	60801	2179.06	125.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	41	669.06	75.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	5	125.60	74.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	concordant	60919	2181.06	124.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	discordant	2	3966.31	69.00	74.50	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	33	671.64	63.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	8	63.64	156.00	71.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	concordant	60858	2178.64	124.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	24	614.35	73.50	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	7	494.60	158.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	concordant	50836	265.64	15.00	88.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	12	132.89	9.50	61.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	concordant	50756	265.64	15.00	87.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	discordant	1	236.96	10.00	15.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	17	155.64	13.00	46.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	concordant	50670	266.04	15.00	87.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	12	217.64	11.50	42.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	concordant	54197	373.64	21.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	16	155.80	15.50	69.50	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	1	51.64	3.00	27.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	concordant	53984	375.64	21.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	20	158.14	20.00	67.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	concordant	54091	376.64	22.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	21	169.64	22.00	68.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	1	54.64	54.00	62.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	concordant	61720	4128.64	236.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	33	1031.64	123.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	2	704.83	281.00	82.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	concordant	61761	4132.64	236.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	discordant	1	243.98	10.00	5.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	39	855.64	200.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	2	3686.67	96.50	52.50	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	concordant	61880	4115.85	235.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	discordant	1	32.64	3.00	20.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	38	674.14	186.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	6	738.83	59.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	concordant	57891	701.64	40.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	discordant	2	6276.03	183.50	72.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	22	231.84	34.50	97.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	1	326.60	88.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	concordant	57776	706.03	40.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	discordant	1	2244.03	77.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	24	220.64	20.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	2	1376.67	22.00	52.50	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	concordant	57815	703.64	40.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	discordant	2	73.64	3.00	36.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	18	247.34	29.50	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	6	72.14	17.00	67.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	concordant	59578	1130.64	65.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	23	538.64	42.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	concordant	59541	1131.64	65.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	27	422.64	56.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	1	56.64	6.00	64.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	concordant	59465	1134.64	65.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	discordant	4	4015.02	160.50	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	26	321.64	44.50	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	7	323.04	274.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	concordant	42020	157.92	9.00	48.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	11	78.32	5.00	33.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	1	38.64	5.00	46.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	concordant	41848	158.14	9.00	47.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	17	80.84	3.00	27.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	1	78.28	2.00	6.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	concordant	41835	157.96	9.00	47.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	discordant	0				
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	9	142.14	9.00	29.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	1	45.64	4.00	37.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	concordant	62780	12300.35	704.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	discordant	5	14509.60	402.00	98.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	cpu_only	46	1908.77	539.00	99.00	
+ZY_BGI_NA12878.grch38.gatk4_hc.full.s0	gpu_only	37	231.60	728.00	99.00	
 ZY_GeneMind_NA12878.grch38.deepvariant.100x.s42	concordant	57148	24.80	152.00	22.00	
 ZY_GeneMind_NA12878.grch38.deepvariant.100x.s42	discordant	23	19.60	73.00	14.00	
 ZY_GeneMind_NA12878.grch38.deepvariant.100x.s42	cpu_only	80	21.30	119.50	18.50	
@@ -263,94 +263,94 @@ ZY_GeneMind_NA12878.grch38.deepvariant.full.s0	concordant	57544	24.80	520.00	22.
 ZY_GeneMind_NA12878.grch38.deepvariant.full.s0	discordant	24	22.50	230.00	18.00	
 ZY_GeneMind_NA12878.grch38.deepvariant.full.s0	cpu_only	152	19.40	319.50	17.00	
 ZY_GeneMind_NA12878.grch38.deepvariant.full.s0	gpu_only	144	21.25	230.50	19.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	concordant	61186	2476.62	149.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	discordant	9	559.97	28.00	73.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	120	165.62	41.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	98	494.04	61.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	concordant	61064	2473.64	149.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	discordant	11	4885.01	123.00	61.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	117	151.64	51.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	110	209.64	43.00	98.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	concordant	61118	2479.64	149.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	discordant	19	727.06	29.00	35.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	145	171.60	82.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	144	278.52	57.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	concordant	54811	286.64	17.00	96.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	discordant	15	302.03	10.00	13.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	162	50.12	14.00	42.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	124	78.32	9.00	47.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	concordant	54793	287.64	17.00	96.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	discordant	24	153.31	8.00	14.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	121	58.71	13.00	40.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	113	66.84	7.00	48.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	concordant	54890	287.64	17.00	96.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	discordant	16	192.31	8.00	4.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	131	47.64	14.00	41.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	119	64.64	9.00	57.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	concordant	57310	413.64	24.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	discordant	14	267.31	12.00	13.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	172	58.14	14.00	45.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	122	101.81	9.00	49.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	concordant	57179	414.64	25.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	discordant	19	274.03	14.00	32.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	160	68.58	16.00	55.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	124	81.12	11.00	44.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	concordant	57226	414.64	24.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	discordant	14	180.51	6.50	11.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	115	52.64	15.00	46.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	88	58.10	8.00	50.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	concordant	61714	4607.64	278.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	discordant	8	1191.49	33.00	56.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	127	161.64	191.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	90	1064.54	80.50	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	concordant	61661	4598.64	278.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	discordant	12	4563.02	155.50	67.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	130	212.64	137.50	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	113	709.64	178.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	concordant	61598	4618.12	278.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	discordant	14	1746.52	73.50	95.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	139	146.64	110.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	160	486.81	188.50	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	concordant	59493	795.64	47.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	discordant	12	266.01	11.00	9.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	126	103.14	27.00	74.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	154	167.37	17.00	63.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	concordant	59551	796.60	48.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	discordant	10	165.56	7.50	17.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	125	69.94	27.00	63.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	162	105.60	16.00	63.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	concordant	59462	796.60	47.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	discordant	13	195.96	8.00	18.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	133	88.64	31.00	58.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	129	121.84	14.00	62.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	concordant	60390	1293.64	77.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	discordant	15	493.86	14.00	15.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	150	138.31	28.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	125	186.02	26.00	74.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	concordant	60299	1293.06	78.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	discordant	12	830.99	26.50	24.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	129	94.64	42.00	91.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	150	140.64	29.00	72.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	concordant	60307	1301.64	77.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	discordant	10	206.00	8.00	23.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	117	106.64	38.00	63.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	127	108.02	16.00	67.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	concordant	47200	164.96	9.00	51.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	discordant	21	329.06	13.00	2.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	102	40.60	9.00	39.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	132	59.96	5.00	24.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	concordant	47048	164.64	9.00	51.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	discordant	22	123.12	5.00	21.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	151	59.80	7.00	39.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	115	54.32	4.00	34.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	concordant	46992	165.96	9.00	51.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	discordant	11	89.84	6.00	8.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	124	37.64	7.50	39.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	122	67.64	5.00	45.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	concordant	62051	11931.10	722.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	discordant	16	3146.53	131.00	43.50	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	cpu_only	198	471.12	414.00	99.00	
-ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	gpu_only	165	1258.02	239.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	concordant	61269	2472.64	148.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	discordant	2	2269.73	89.00	80.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	44	2172.64	156.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	6	873.33	214.50	85.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	concordant	61161	2470.64	149.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	31	2227.64	126.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	6	347.69	311.50	89.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	concordant	61241	2475.64	148.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	discordant	1	5934.99	189.00	22.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	40	1119.02	91.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	14	963.83	247.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	concordant	54950	286.64	17.00	96.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	discordant	1	111.65	5.00	15.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	37	193.64	18.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	2	59.14	24.00	66.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	concordant	54917	286.64	17.00	96.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	21	151.64	17.00	81.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	1	112.60	20.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	concordant	55008	287.06	17.00	96.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	discordant	1	228.17	26.00	1.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	28	207.64	16.00	84.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	3	45.32	10.00	47.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	concordant	57467	412.64	24.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	29	258.64	23.00	97.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	1	48.64	42.00	56.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	concordant	57328	413.64	24.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	discordant	1	276.64	17.00	33.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	29	214.64	23.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	1	48.32	2.00	6.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	concordant	57332	414.06	24.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	23	343.64	23.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	2	37.14	4.50	44.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	concordant	61796	4602.64	278.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	discordant	1	648.26	25.00	11.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	52	1482.84	112.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	17	221.64	29.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	concordant	61750	4591.64	277.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	discordant	3	1274.81	54.00	27.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	50	1984.34	287.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	9	388.64	72.00	90.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	concordant	61692	4611.64	277.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	discordant	5	5713.04	783.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	54	1340.35	214.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	21	988.98	377.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	concordant	59598	794.64	47.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	33	660.64	55.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	5	53.60	26.00	61.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	concordant	59656	795.06	48.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	30	427.19	34.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	3	41.60	135.00	49.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	concordant	59577	795.64	47.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	31	434.02	48.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	concordant	60524	1291.06	77.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	31	976.64	66.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	concordant	60411	1291.06	78.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	29	621.64	72.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	3	72.64	86.00	80.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	concordant	60401	1299.06	77.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	33	662.64	57.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	concordant	47304	164.64	9.00	51.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	19	174.64	9.00	94.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	5	40.64	14.00	48.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	concordant	47199	163.97	9.00	51.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	22	139.64	8.00	37.50	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	concordant	47108	165.64	9.00	51.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	discordant	0				
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	19	166.97	12.00	54.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	3	31.64	17.00	39.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	concordant	62175	11903.60	722.00	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	discordant	4	384.27	62.00	69.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	cpu_only	86	3397.62	744.50	99.00	
+ZY_GeneMind_NA12878.grch38.gatk4_hc.full.s0	gpu_only	70	660.35	1017.50	99.00	
 ZY_Illumina_NA12878.grch38.deepvariant.100x.s42	concordant	56472	24.80	132.00	22.00	
 ZY_Illumina_NA12878.grch38.deepvariant.100x.s42	discordant	11	20.00	32.00	11.00	
 ZY_Illumina_NA12878.grch38.deepvariant.100x.s42	cpu_only	88	16.30	120.00	14.00	
@@ -443,95 +443,95 @@ ZY_Illumina_NA12878.grch38.deepvariant.full.s0	concordant	57214	24.80	421.00	22.
 ZY_Illumina_NA12878.grch38.deepvariant.full.s0	discordant	28	22.80	337.00	17.00	
 ZY_Illumina_NA12878.grch38.deepvariant.full.s0	cpu_only	132	18.85	286.00	17.00	
 ZY_Illumina_NA12878.grch38.deepvariant.full.s0	gpu_only	142	19.85	352.50	17.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	concordant	60204	2259.05	128.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	discordant	16	958.02	26.00	36.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	149	190.60	66.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	216	156.62	72.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	concordant	60211	2258.64	128.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	discordant	19	308.01	12.00	36.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	125	96.64	60.00	73.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	161	124.63	69.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	concordant	60153	2256.64	128.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	discordant	15	197.64	9.00	12.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	119	118.02	38.00	84.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	197	145.64	69.00	87.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	concordant	50844	288.64	16.00	94.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	discordant	11	103.64	4.00	15.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	73	65.32	13.00	39.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	190	68.98	7.00	44.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	concordant	51047	287.64	16.00	96.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	discordant	13	110.84	3.00	9.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	91	61.64	10.00	40.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	128	56.12	7.00	45.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	concordant	51071	285.64	16.00	95.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	discordant	15	111.92	5.00	6.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	74	61.64	11.00	42.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	187	67.64	8.00	52.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	concordant	53892	404.64	23.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	discordant	10	158.04	5.00	4.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	65	65.64	14.00	45.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	163	78.32	9.00	57.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	concordant	54019	403.64	23.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	discordant	30	207.83	6.00	13.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	75	74.32	14.00	51.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	119	58.64	10.00	51.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	concordant	54093	402.64	22.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	discordant	7	139.93	6.00	6.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	77	60.64	14.00	45.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	150	58.64	9.50	48.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	concordant	61004	4150.35	236.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	discordant	9	881.02	43.00	30.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	116	113.62	161.00	98.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	137	520.64	162.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	concordant	61108	4149.14	237.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	discordant	9	547.77	31.00	50.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	87	169.87	78.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	100	236.62	109.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	concordant	61135	4138.06	236.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	discordant	11	536.02	23.00	35.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	90	266.64	115.50	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	103	353.64	119.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	concordant	60342	2253.06	128.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	discordant	1	869.02	46.00	35.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	cpu_only	26	374.64	90.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s42	gpu_only	7	48.64	66.00	56.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	concordant	60327	2252.64	128.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	cpu_only	28	722.64	85.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s43	gpu_only	4	64.62	143.50	72.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	concordant	60257	2252.64	128.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	discordant	2	58.98	2.50	19.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	cpu_only	28	409.85	40.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.100x.s44	gpu_only	3	55.64	30.00	63.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	concordant	50914	288.64	16.00	94.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	discordant	1	51.64	4.00	48.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	cpu_only	13	83.66	9.00	39.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s42	gpu_only	8	35.14	16.00	39.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	concordant	51135	287.05	16.00	95.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	cpu_only	16	217.64	14.00	98.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s43	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	concordant	51151	285.05	16.00	94.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	cpu_only	9	199.96	12.00	72.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.10x.s44	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	concordant	53950	403.64	23.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	cpu_only	17	209.81	17.00	57.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s42	gpu_only	3	170.64	150.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	concordant	54105	403.06	23.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	cpu_only	19	235.64	20.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s43	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	concordant	54165	401.64	22.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	cpu_only	12	168.89	12.00	51.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.15x.s44	gpu_only	2	219.62	51.00	69.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	concordant	61096	4142.35	236.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	cpu_only	33	1289.64	202.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s42	gpu_only	3	112.64	46.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	concordant	61165	4145.06	236.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	discordant	4	131.12	23.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	cpu_only	35	569.64	167.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s43	gpu_only	8	239.12	398.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	concordant	61203	4129.64	236.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	discordant	3	102.64	4.00	30.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	cpu_only	30	805.85	108.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.200x.s44	gpu_only	5	80.64	383.00	88.00	
 ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s1	concordant	57359	748.64	42.00	99.00	
 ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s1	discordant	18	198.63	8.00	15.00	
 ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s1	cpu_only	110	94.12	19.00	58.50	
 ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s1	gpu_only	189	93.60	21.00	57.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	concordant	57360	747.85	42.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	discordant	17	262.97	9.00	33.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	81	63.64	14.00	56.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	205	102.60	17.00	70.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	concordant	57337	752.06	42.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	discordant	12	261.89	9.50	15.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	112	66.12	22.00	51.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	165	114.60	26.00	69.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	concordant	57384	753.06	42.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	discordant	7	221.86	10.00	9.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	87	78.28	21.00	57.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	149	78.32	12.00	48.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	concordant	58828	1195.64	67.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	discordant	7	489.02	23.00	35.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	123	100.00	35.00	70.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	170	125.12	36.00	84.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	concordant	58891	1198.60	68.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	discordant	16	195.56	6.50	34.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	110	84.12	28.00	67.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	200	88.64	34.00	70.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	concordant	58907	1195.64	68.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	discordant	12	431.04	13.50	47.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	118	98.10	27.50	71.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	199	107.64	41.00	87.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	concordant	42900	168.64	9.00	54.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	discordant	8	169.23	6.00	6.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	46	46.64	5.00	32.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	157	59.32	5.00	40.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	concordant	43280	170.04	9.00	54.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	discordant	7	196.64	7.00	21.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	82	35.44	6.00	38.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	98	49.98	4.00	34.50	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	concordant	43156	168.64	9.00	54.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	discordant	14	98.30	5.00	13.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	61	56.64	5.00	38.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	193	69.97	6.00	37.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	concordant	61923	10040.10	574.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	discordant	8	887.52	19.50	40.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	cpu_only	158	297.64	229.00	99.00	
-ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	gpu_only	132	667.62	273.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	concordant	57430	746.64	42.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	cpu_only	28	155.30	24.00	71.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s42	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	concordant	57437	750.64	42.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	discordant	1	771.02	16.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	cpu_only	23	419.64	33.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s43	gpu_only	3	139.64	278.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	concordant	57452	751.64	42.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	cpu_only	26	168.64	27.50	95.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.30x.s44	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	concordant	58932	1193.64	67.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	cpu_only	26	627.35	46.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s42	gpu_only	4	249.10	60.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	concordant	58984	1195.64	68.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	cpu_only	33	346.04	41.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s43	gpu_only	1	2516.02	19.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	concordant	59010	1193.64	68.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	cpu_only	27	288.64	21.00	75.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.50x.s44	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	concordant	42947	168.64	9.00	54.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	cpu_only	7	202.64	8.00	27.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s42	gpu_only	2	38.14	29.50	45.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	concordant	43353	169.96	9.00	54.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	cpu_only	16	95.24	6.50	28.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s43	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	concordant	43219	168.64	9.00	54.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	discordant	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	cpu_only	12	91.39	8.00	33.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.5x.s44	gpu_only	0				
+ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	concordant	62025	10013.60	573.00	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	discordant	6	798.43	25.00	50.50	
+ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	cpu_only	58	1646.02	323.50	99.00	
+ZY_Illumina_NA12878.grch38.gatk4_hc.full.s0	gpu_only	35	182.05	74.00	99.00	

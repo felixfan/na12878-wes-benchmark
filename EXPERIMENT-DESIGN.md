@@ -150,10 +150,11 @@ lifted-over V6) carry `chr`, so the issue does not arise.
 
 **BQSR scope.** BQSR is applied to the **GATK family only** (gatk4_hc / pbrun_hc;
 `BaseRecalibrator -> ApplyBQSR`, known-sites = dbSNP + Mills + 1000G/known indels, chosen per build).
-**DeepVariant does not use it** — the DeepVariant authors advise against it and the CNN does not benefit.
-Consequently `dedup.bam` is shared across callers while `recal.bam` is GATK-specific. This follows the
-principle that each pipeline runs under its own best practice; the caller comparison therefore contains
-BQSR as a covariate, which the paper states explicitly.
+The DeepVariant workflows use the duplicate-marked BAM without BQSR.
+Both CPU GATK BQSR steps use the V6 target intervals. In version 1.1.0, both GPU BQSR steps use
+the same target BED with zero additional interval padding. The 66 formal GPU HaplotypeCaller runs
+were rerun under this configuration. Revision provenance is recorded in results/revisions/v1.1.0.
+The caller comparison includes each workflow's documented preprocessing configuration.
 
 **Stratification** (passed to hap.py `--stratification`) uses only the top-level difficult regions:
 `LowComplexity` (homopolymers and tandem repeats), `GCcontent`, `mappability` + `SegmentalDuplications`,
@@ -185,12 +186,13 @@ Note that "4 caller-and-hardware configurations" means **2 algorithms × 2 hardw
 not four independent callers — that correspondence is what makes the CPU↔GPU analysis interpretable.
 See Supplementary Table S5 of the paper.
 
-**Why T3 was widened to seven depth points.** The original {15, 30, 50} + full was too sparse. Since
-CPU↔GPU disagreements were known to concentrate at low depth (median DP 10.5× at discordant versus 45.0× at
-concordant sites), the low end is the informative stress test: 5× and 10× were added (if equivalence holds
-there, the conclusion is considerably stronger; if it breaks, that is a finding that must be reported).
-100× was added as a commonly used clinical WES depth and 200× to align with the new high-depth points.
-Matched pairs increased from 60 to 132.
+**T3 depth coverage.** The pairing grid includes 5, 10, 15, 30, 50, 100 and 200 times nominal
+target depth, with three sampling seeds per depth and one full-depth run. This yields 132 matched
+pairs across the three platforms and two caller implementations. Low-depth points characterize
+operation near the detection threshold. The revised quality comparison has a median DP of 23
+at genotype-discordant sites and 45 at concordant sites, calculated as medians of per-pair medians.
+Only 91 pairs have sites in the discordant category. Interpret the current statistics using the
+version 1.1.0 source data.
 
 `scripts/gen_plan.sh` enumerates and de-duplicates the plan, emitting the exact counts and `jobs.list`.
 

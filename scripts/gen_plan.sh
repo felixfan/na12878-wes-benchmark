@@ -40,8 +40,7 @@ SAMPLES=(ZY_Illumina_NA12878 ZY_BGI_NA12878 ZY_GeneMind_NA12878)   # three same-
 # SNV accuracy has plateaued there but INDEL F1 still gains ~0.007-0.009).
 DEPTHS_X=(5 8 10 12 15 20 25 30 40 50 60 75 100 150 200 300 400)
 # GPU depth points for T3 (full depth is added separately). Widened from {15,30,50} to seven points:
-#   5 and 10 were added because CPU/GPU disagreements concentrate at low depth (median DP 10.5x at
-#   discordant versus 45.0x at concordant sites), making the low end the informative stress test;
+#   5 and 10 characterize performance near the low-depth detection threshold.
 #   100 is a common clinical WES depth and 200 aligns with the new high-depth points.
 #   The remaining points (40/60/75/150/300/400) are omitted: their behaviour interpolates between the
 #   two extremes, and running the GPU branch over the whole grid would need ~2.55 TB more storage.

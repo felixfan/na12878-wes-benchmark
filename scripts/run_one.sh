@@ -85,6 +85,34 @@ if [ "$DRY_RUN" != 1 ]; then
   for v in FQ_R1 FQ_R2 FASTA TARGET WORKDIR; do [ -n "${!v:-}" ] || { echo "config is missing $v" >&2; exit 1; }; done
 fi
 CALIB="$WORKDIR/plan/calibration.csv"
+OUT="$WORKDIR/runs/$RID"
+case "$CALLER" in gatk4_hc|gatk3|pbrun_haplotypecaller) DO_BQSR=1;; *) DO_BQSR=0;; esac
+
+# v1.1.0 restricts both GPU BQSR steps to the V6 BED with zero interval padding.
+# An old run_id alone cannot establish which BQSR scope generated its outputs.
+# The per-run marker records the protocol and target BED content. A fresh WORKDIR
+# is required when existing outputs have no matching marker.
+BQSR_PROTOCOL="v1.1.0-v6-intervals-padding0"
+RUN_PROTOCOL_EXPECTED=""
+if [ "$HW" = gpu ] && [ "$DO_BQSR" = 1 ] && [ "$ALIGN_ONLY" != 1 ] && [ "$DRY_RUN" != 1 ]; then
+  mkdir -p "$WORKDIR/plan/locks"
+  exec 9>"$WORKDIR/plan/locks/$RID.lock"
+  flock -n 9 || { echo "this run is already active: $RID" >&2; exit 1; }
+  TARGET_SHA=$(sha256sum "$TARGET" | awk '{print $1}')
+  RUN_PROTOCOL_EXPECTED="$BQSR_PROTOCOL $PARABRICKS_VERSION $TARGET_SHA"
+  RUN_PROTOCOL="$OUT/protocol.txt"
+  if [ -s "$RUN_PROTOCOL" ]; then
+    [ "$(cat "$RUN_PROTOCOL")" = "$RUN_PROTOCOL_EXPECTED" ] || {
+      echo "incompatible GPU BQSR protocol for $RID; use a fresh WORKDIR" >&2; exit 1; }
+  elif { [ -d "$OUT" ] && [ -n "$(find "$OUT" -mindepth 1 -maxdepth 1 -print -quit)" ]; } ||
+       [ -e "$WORKDIR/happy/$RID.summary.csv" ] || [ -e "$WORKDIR/happy/$RID.extended.csv" ]; then
+    echo "existing GPU GATK outputs have no v1.1.0 protocol marker for $RID; use a fresh WORKDIR" >&2
+    exit 1
+  fi
+  mkdir -p "$OUT"
+  printf '%s\n' "$RUN_PROTOCOL_EXPECTED" > "$RUN_PROTOCOL.tmp.$$"
+  mv -f "$RUN_PROTOCOL.tmp.$$" "$RUN_PROTOCOL"
+fi
 run "mkdir -p '$WORKDIR/bam' '$WORKDIR/runs/$RID' '$WORKDIR/happy' '$WORKDIR/plan'"
 echo "=== $RID  (platform=$PLATFORM ref=$REF target=${TARGETX}X seed=$SEED hw=$HW align_only=$ALIGN_ONLY) ==="
 
@@ -173,7 +201,6 @@ if [ "$ALIGN_ONLY" = 1 ]; then echo "=== align-only done: $RID (bam + coverage r
 # ---- 3c) BQSR (GATK family only; DeepVariant does not use it, see EXPERIMENT-DESIGN section 3)
 #          -> recal.bam; DeepVariant keeps using dedup.bam ----
 CALLBAM="$DEDUP"
-case "$CALLER" in gatk4_hc|gatk3|pbrun_haplotypecaller) DO_BQSR=1;; *) DO_BQSR=0;; esac
 if [ "$DO_BQSR" = 1 ]; then
   case "$REF" in
     grch38) KDBSNP=$KNOWN_DBSNP_GRCH38; KMILLS=$KNOWN_MILLS_GRCH38; KINDEL=$KNOWN_INDELS_GRCH38 ;;
@@ -182,11 +209,29 @@ if [ "$DO_BQSR" = 1 ]; then
   [ "$DRY_RUN" = 1 ] || for k in "$KDBSNP" "$KMILLS" "$KINDEL"; do
     [ -n "$k" ] && [ -e "$k" ] || { echo "BQSR is missing a known-sites file: '$k' (set KNOWN_*_${REF^^} in the config)" >&2; exit 1; }; done
   RTABLE="$BAMDIR/recal.$CALLER.table"; RECAL="$BAMDIR/recal.$CALLER.bam"
-  if have "$RECAL"; then echo "  BQSR recal.bam already exists, reusing $RECAL"; else
-    if [ "$HW" = gpu ]; then
-      run "pbrun bqsr --ref '$FASTA' --in-bam '$DEDUP' --knownSites '$KDBSNP' --knownSites '$KMILLS' --knownSites '$KINDEL' --out-recal-file '$RTABLE'"
-      run "pbrun applybqsr --ref '$FASTA' --in-bam '$DEDUP' --in-recal-file '$RTABLE' --out-bam '$RECAL'"
+  if [ "$HW" = gpu ]; then
+    RTABLE="$BAMDIR/recal.$CALLER.v6-intervals.table"
+    RECAL="$BAMDIR/recal.$CALLER.v6-intervals.bam"
+    BQSR_COMPLETE="$RECAL.complete"
+    if [ "$DRY_RUN" != 1 ] && [ -s "$BQSR_COMPLETE" ] &&
+       [ "$(cat "$BQSR_COMPLETE")" != "$RUN_PROTOCOL_EXPECTED" ]; then
+      echo "incompatible GPU BQSR cache for $RID; use a fresh WORKDIR" >&2
+      exit 1
+    fi
+    if have "$RECAL" && [ -s "$BQSR_COMPLETE" ]; then
+      echo "  interval-restricted BQSR cache already exists, reusing $RECAL"
     else
+      [ "$DRY_RUN" = 1 ] || rm -f "$BQSR_COMPLETE"
+      run "pbrun bqsr --ref '$FASTA' --in-bam '$DEDUP' --knownSites '$KDBSNP' --knownSites '$KMILLS' --knownSites '$KINDEL' --interval-file '$TARGET' --interval-padding 0 --out-recal-file '$RTABLE'"
+      run "pbrun applybqsr --ref '$FASTA' --in-bam '$DEDUP' --in-recal-file '$RTABLE' --interval-file '$TARGET' --interval-padding 0 --out-bam '$RECAL'"
+      run "samtools index '$RECAL'"
+      if [ "$DRY_RUN" != 1 ]; then
+        printf '%s\n' "$RUN_PROTOCOL_EXPECTED" > "$BQSR_COMPLETE.tmp.$$"
+        mv -f "$BQSR_COMPLETE.tmp.$$" "$BQSR_COMPLETE"
+      fi
+    fi
+  else
+    if have "$RECAL"; then echo "  BQSR recal.bam already exists, reusing $RECAL"; else
       run "gatk --java-options '$GATK_JAVA_OPTS' BaseRecalibrator -R '$FASTA' -I '$DEDUP' -L '$TARGET' --known-sites '$KDBSNP' --known-sites '$KMILLS' --known-sites '$KINDEL' -O '$RTABLE'"
       run "gatk --java-options '$GATK_JAVA_OPTS' ApplyBQSR -R '$FASTA' -I '$DEDUP' -L '$TARGET' --bqsr-recal-file '$RTABLE' -O '$RECAL'"
     fi
@@ -196,7 +241,7 @@ fi
 
 # ---- 4) calling (restricted to the V6 target; GATK family uses recal.bam, DeepVariant dedup.bam)
 #          -> one directory per run ----
-OUT="$WORKDIR/runs/$RID"; CALLS="$OUT/calls.vcf.gz"; NORM="$OUT/calls.norm.vcf.gz"; _TCALL=$SECONDS
+CALLS="$OUT/calls.vcf.gz"; NORM="$OUT/calls.norm.vcf.gz"; _TCALL=$SECONDS
 case "$CALLER" in
   gatk4_hc)               run "gatk HaplotypeCaller -R '$FASTA' -I '$CALLBAM' -L '$TARGET' -O '$CALLS'" ;;
   gatk3)                  run "java -jar \$GATK3_JAR -T HaplotypeCaller -R '$FASTA' -I '$CALLBAM' -L '$TARGET' -o '$CALLS'" ;;
@@ -214,14 +259,12 @@ CALL_SEC=$(( SECONDS - _TCALL ))   # calling wall-clock seconds (basis of the CP
 #   VariantFiltration flags only INDELs, so hap.py filter=PASS is "raw SNVs + hard-filtered INDELs"
 #   (the recommended set) while ALL remains the complete callset.
 #   The logic lives in hardfilter_vcf.sh (shared with apply_hardfilter.sh, a single source of truth).
-#   Idempotent: skipped when the filtered VCF already exists.
+#   Calling is regenerated above, so filters must be regenerated from those calls.
 NORMIN="$CALLS"
 case "$CALLER" in
   gatk4_hc|gatk3|pbrun_haplotypecaller)
     FILT="$OUT/calls.filt.vcf.gz"
-    if have "$FILT"; then echo "  hard-filtered VCF already exists, reusing $FILT"; else
-      run "DRY_RUN=$DRY_RUN THREADS=$THREADS bash '$HERE/hardfilter_vcf.sh' '$CALLS' '$FASTA' '$FILT'"
-    fi
+    run "DRY_RUN=$DRY_RUN THREADS=$THREADS bash '$HERE/hardfilter_vcf.sh' '$CALLS' '$FASTA' '$FILT'"
     NORMIN="$FILT"
     ;;
 esac

@@ -1,5 +1,5 @@
 category,n_pairs,median_DP,median_GQ,median_QUAL
-concordant,132,45.0,34.5,91.38000000000001
-discordant,132,10.5,14.75,51.485
-cpu_only,132,27.75,26.5,29.91
-gpu_only,132,26.0,21.5,30.96
+concordant,132,45.0,34.5,91.36
+discordant,132,23.0,15.0,21.75
+cpu_only,132,33.75,24.0,51.41
+gpu_only,132,38.0,21.0,24.3

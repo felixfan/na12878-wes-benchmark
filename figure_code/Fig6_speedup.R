@@ -1,5 +1,5 @@
 # Figure 6 - GPU acceleration of variant calling, 132 matched pairs (GRCh38)
-# Reads source_data/Fig6_speedup.csv and writes figures/fig6.png (300 dpi).
+# Reads source_data/Fig6_speedup.csv and writes figures/fig6.png (300 dpi) and figures/fig6.pdf (vector).
 #   Rscript figure_code/Fig6_speedup.R
 # Panels: (a) per-pair wall-time, (b) median speed-up versus depth. No title is drawn on the figure.
 # The pairing grid covers 5, 10, 15, 30, 50, 100, 200x and full depth: 300x and 400x were run on CPU
@@ -34,6 +34,7 @@ pa <- ggplot(d, aes(call_sec_cpu, call_sec_gpu, colour = caller_pair)) +
   scale_x_log10() + scale_y_log10() +
   scale_colour_manual(values = CALLER_COL) +
   labs(x = "CPU calling time (s)", y = "GPU calling time (s)", colour = NULL) +
+  guides(colour = "none") +
   theme_bw(base_size = 11)
 
 lv <- c("5", "10", "15", "30", "50", "100", "200", "full")
@@ -55,4 +56,5 @@ p <- (pa | pb) +
   theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
 ggsave(out("fig6.png"), p, width = 11, height = 4.8, dpi = 300)
-cat("->", out("fig6.png"), "\n")
+ggsave(out("fig6.pdf"), p, width = 11, height = 4.8, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig6.png"), "and", out("fig6.pdf"), "\n")

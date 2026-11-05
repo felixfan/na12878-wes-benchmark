@@ -78,6 +78,11 @@ STRAT_B37=                 # GRCh37/b37 stratification .tsv (no-chr version)
 GATK3_JAR=                 # absolute path to GenomeAnalysisTK.jar (3.8-1), if used
 
 # ============ Output / working directory ============
+# Use a fresh WORKDIR when upgrading GPU GATK runs from v1.0.1 to v1.1.0.
+# The new driver records the BQSR scope and target BED checksum per run and rejects
+# unmarked or incompatible existing outputs. It requires the Linux flock utility.
+# Every input path and WORKDIR must also be included in the Docker wrappers'
+# MOUNTS setting. Install wrappers in a separate BIN when changing the mounts.
 WORKDIR=/PATH/TO/WORKDIR   # root for intermediate BAM/VCF files and hap.py output
 
 # ============ Tool versions (recorded in the manifest for provenance) ============

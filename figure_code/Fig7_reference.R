@@ -1,5 +1,5 @@
 # Figure 7 - Reference-build comparison, GRCh37/b37 versus GRCh38 (full depth)
-# Reads source_data/Fig7_reference.csv and writes figures/fig7.png (300 dpi).
+# Reads source_data/Fig7_reference.csv and writes figures/fig7.png (300 dpi) and figures/fig7.pdf (vector).
 #   Rscript figure_code/Fig7_reference.R
 # Panels: (a) SNV, GATK4 HaplotypeCaller  (b) SNV, DeepVariant
 #         (c) INDEL, GATK4 HaplotypeCaller (d) INDEL, DeepVariant. No title is drawn on the figure.
@@ -48,4 +48,5 @@ p <- (panel("SNV", "gatk4_hc", "SNV F1") | panel("SNV", "deepvariant", "SNV F1")
   theme(legend.position = "bottom", plot.tag = element_text(face = "bold", size = 12))
 
 ggsave(out("fig7.png"), p, width = 9.5, height = 7, dpi = 300)
-cat("->", out("fig7.png"), "\n")
+ggsave(out("fig7.pdf"), p, width = 9.5, height = 7, device = cairo_pdf)   # vector, for the journal
+cat("->", out("fig7.png"), "and", out("fig7.pdf"), "\n")
