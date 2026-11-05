@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-doi: 10.5281/zenodo.21792674
+doi: 10.5281/zenodo.23984550
 title: "Deep whole-exome sequencing of NA12878 (HG001) on three platforms for germline variant-calling benchmarking: analysis framework and processed results"
 message: >-
   Please cite this dataset release and include version 1.1.0. Use the
@@ -44,3 +44,4 @@ license: CC-BY-4.0
 license-url: https://creativecommons.org/licenses/by/4.0/
 repository-code: https://github.com/felixfan/na12878-wes-benchmark
 version: 1.1.0
+date-released: '2026-11-05'

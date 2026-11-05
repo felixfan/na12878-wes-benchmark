@@ -108,7 +108,7 @@ GATK-family calls use INDEL hard filtering. SNV records are exempted by the type
 Use the version-specific Zenodo DOI for the release used in your analysis. CITATION.cff records the release version. Before archiving, its DOI is the stable concept DOI. The assigned version DOI can be recorded there after archiving.
 
 <!-- version-doi-start -->
-The version-specific DOI for v1.1.0 will be assigned when this GitHub release is archived by Zenodo.
+Version 1.1.0 is archived at [Zenodo](https://doi.org/10.5281/zenodo.23984550).
 <!-- version-doi-end -->
 
 The concept DOI resolves to the version collection at [Zenodo](https://doi.org/10.5281/zenodo.21792674). The previous v1.0.1 DOI identifies the earlier processing snapshot.
