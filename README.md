@@ -109,7 +109,7 @@ GATK-family calls use INDEL hard filtering. SNV records are exempted by the type
 
 ## Citing this release
 
-For version 1.1.0, cite [Zenodo v1.1.0](https://doi.org/10.5281/zenodo.23984550), DOI 10.5281/zenodo.23984550. CITATION.cff provides the citation metadata for this release.
+For version 1.1.0, cite the [Zenodo archive (DOI: 10.5281/zenodo.23984550)](https://doi.org/10.5281/zenodo.23984550). Machine-readable citation metadata are available in [`CITATION.cff`](CITATION.cff).
 
 The [concept DOI](https://doi.org/10.5281/zenodo.21792674) identifies the resource across versions.
 
