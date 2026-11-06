@@ -119,4 +119,4 @@ The [historical v1.0.1 snapshot](https://doi.org/10.5281/zenodo.21792675) contai
 
 ## Licenses
 
-Code is licensed under MIT. Data and documentation are licensed under CC BY 4.0. See LICENSE and LICENSE-DATA for the third-party material notes. The GIAB truth VCFs and raw reads are obtained from their original repositories.
+Project-authored analysis and plotting code is licensed under [MIT](LICENSE). Project-generated processed data, figures and documentation are licensed under [CC BY 4.0](LICENSE-DATA). Third-party materials retain any applicable original rights and licensing terms, as described in [LICENSE-DATA](LICENSE-DATA). The GIAB truth VCFs and raw reads are obtained from their original repositories and are not included in this repository.

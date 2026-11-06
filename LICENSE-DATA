@@ -2,9 +2,21 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 Copyright (c) 2026 Yanhui Fan, Ming Huang, Chunming Zhang, Gang Niu
 
-The data and documentation in this repository -- results/, schema/, reference/,
-source_data/source_data.xlsx and EXPERIMENT-DESIGN.md -- are licensed under the
-Creative Commons Attribution 4.0 International License.
+SCOPE
+The project-generated processed data, figures and documentation in this
+repository are licensed under the Creative Commons Attribution 4.0
+International License. These materials include:
+
+- results/: processed benchmark tables, quality summaries and revision records;
+- source_data/: per-figure and per-table CSV files;
+- schema/: data dictionaries and table definitions;
+- figures/: project-generated figures and their editable source files;
+- README.md, EXPERIMENT-DESIGN.md, CHANGELOG.md and citation metadata.
+
+This grant applies to rights held by the project authors. Third-party
+materials are addressed separately below. Project-authored analysis and
+plotting code in scripts/, figure_code/ and configs/ is licensed under MIT;
+see LICENSE.
 
 You are free to share and adapt this material for any purpose, including
 commercially, provided you give appropriate credit, provide a link to the
@@ -12,15 +24,27 @@ license, and indicate if changes were made.
 
 Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
 
-ATTRIBUTION
-Please cite the Data Descriptor:
-  Fan, Y., Huang, M., Zhang, C. & Niu, G. Deep whole-exome sequencing of
-  NA12878 (HG001) on three platforms for germline variant-calling
-  benchmarking. Scientific Data (2026).
+ATTRIBUTION AND DATASET CITATION
+Recommended citation for the versioned dataset:
+  Fan, Y., Huang, M., Zhang, C. & Niu, G. (2026). Deep whole-exome sequencing
+  of NA12878 (HG001) on three platforms for germline variant-calling
+  benchmarking: analysis framework and processed results. Version 1.1.0.
+  Zenodo. https://doi.org/10.5281/zenodo.23984550
 
-THIRD-PARTY MATERIAL
+Machine-readable citation metadata are provided in CITATION.cff. When
+sharing the licensed materials, retain the attribution and license notices
+required by CC BY 4.0 and indicate any modifications.
+
+THIRD-PARTY MATERIAL AND EXTERNAL RESOURCES
 reference/S07604514_Covered.GRCh38.bed and reference/S07604514_Covered.GRCh37.bed
 describe the Agilent SureSelect Human All Exon V6 capture design (Agilent
-Technologies) and are redistributed solely so that the benchmark region is
-reproducible. The GIAB HG001 v4.2.1 benchmark used as ground truth is
-distributed by NIST/NCBI and is not included in this repository.
+Technologies). They are included to identify the benchmark target regions
+and support reproducibility. They are third-party materials and are excluded
+from the project authors' CC BY 4.0 grant. Any applicable original rights and
+licensing terms remain with their respective rights holders; this notice
+does not grant additional rights in those materials.
+
+The GIAB HG001 v4.2.1 truth resources distributed by NIST/NCBI and the raw
+sequencing reads deposited in NCBI SRA are not included in this repository.
+They are obtained from their original repositories, and this notice does
+not relicense those externally hosted materials.
